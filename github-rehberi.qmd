@@ -1,7 +1,7 @@
 ---
 title: "Epidemiyologlar İçin GitHub Rehberi"
 subtitle: "Hesap açmaktan web sitesi yayınlamaya, sıfırdan uygulamalı kılavuz"
-author: "Hazırlayan: [Adınız]"
+author: "Hazırlayan: Muammer BESLEN"
 date: today
 lang: tr
 format:
