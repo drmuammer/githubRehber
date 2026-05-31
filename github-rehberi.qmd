@@ -1,0 +1,727 @@
+---
+title: "Epidemiyologlar İçin GitHub Rehberi"
+subtitle: "Hesap açmaktan web sitesi yayınlamaya, sıfırdan uygulamalı kılavuz"
+author: "Hazırlayan: [Adınız]"
+date: today
+lang: tr
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    toc: true
+    toc-title: "İçindekiler"
+    toc-depth: 3
+    toc-location: left
+    number-sections: true
+    code-copy: true
+    code-overflow: wrap
+    smooth-scroll: true
+    anchor-sections: true
+    fig-cap-location: bottom
+    css: styles.css
+execute:
+  echo: true
+  eval: false
+---
+
+# Bu rehber kime ve neye göre {.unnumbered}
+
+Bu rehber, **kod yazan ama GitHub kullanmamış** sağlık ve epidemiyoloji
+araştırmacıları için yazıldı. Amaç GitHub'ı bir yazılımcı gibi değil, bir
+araştırmacı gibi kullanmanı sağlamak: analiz kodunu güvende tutmak,
+sürümlerini takip etmek, ekiple çalışmak ve sonuçları yayınlamak.
+
+Rehber boyunca her iş için **iki yol** göstereceğiz:
+
+- 🟢 **Kolay yol** — tarayıcı ve **GitHub Desktop** (kod yazmadan, tıklayarak)
+- 🔵 **İleri yol** — **terminal / komut satırı** (Git komutlarıyla)
+
+İkisini de bilmen gerekmez. Önce kolay yolla başla; terminale ihtiyaç
+duyduğunda ilgili bölüme dönersin.
+
+::: {.callout-tip}
+## Nasıl okumalı?
+Soldaki içindekiler menüsünden istediğin konuya atlayabilirsin. İlk kez
+kullanıyorsan sırayla "Git ve GitHub nedir?" → "Hesap oluşturma" →
+"GitHub Desktop" bölümlerini takip et.
+:::
+
+---
+
+# Git ve GitHub nedir?
+
+İkisi farklı şeylerdir ve bu ayrım kafa karışıklığının çoğunu çözer.
+
+- **Git**, bilgisayarındaki dosyaların değişikliklerini kaydeden bir
+  **sürüm kontrol sistemidir**. "`analiz_son.R`", "`analiz_son_v2.R`",
+  "`analiz_GERÇEKTEN_son.R`" dosyalarına son verir. Tek bir dosya tutarsın;
+  Git onun tüm geçmişini hatırlar.
+- **GitHub**, Git ile takip edilen projelerin (depoların) saklandığı,
+  paylaşıldığı ve birlikte çalışıldığı **internet platformudur**. Git'in
+  bulutta yaşayan hali gibi düşün.
+
+Benzetme: **Git** Word'ün "değişiklikleri izle" özelliği,
+**GitHub** ise dosyanın herkesin görüp katkı verebildiği Google Drive'daki
+hali gibidir.
+
+## Neden epidemiyoloji için önemli?
+
+- **Yeniden üretilebilirlik (reproducibility):** Bir analizin hangi kodla,
+  hangi sürümde yapıldığı kayıt altındadır. Hakem "şu tabloyu nasıl
+  ürettiniz?" dediğinde geçmişe dönebilirsin.
+- **Yedek ve güvenlik:** Bilgisayarın bozulsa bile kodun bulutta durur.
+- **İş birliği:** Aynı R/Python projesini birden fazla kişi, birbirinin
+  üstüne yazmadan geliştirebilir.
+- **Yayınlama:** Quarto raporlarını, ders notlarını, paket dokümantasyonunu
+  ücretsiz bir web sitesi olarak yayımlayabilirsin (bu rehberin kendisi de
+  öyle yayımlanabilir).
+
+::: {.callout-warning}
+## Hasta verisi uyarısı
+GitHub'a **kimliklendirilebilir hasta verisi, ham veri seti veya gizli
+bilgi yüklemeyin.** GitHub kodu paylaşmak içindir, veriyi değil. Veriyi
+hariç tutmayı [`.gitignore`](#gitignore-istenmeyen-dosyalari-haric-tutmak)
+bölümünde anlatıyoruz. Halka açık (public) depolarda her şey herkese
+görünür.
+:::
+
+---
+
+# Temel sözlük
+
+Rehber boyunca geçecek terimler. Şimdilik göz gezdir, ileride dönersin.
+
+| Terim | Türkçe karşılığı | Ne demek |
+|---|---|---|
+| **Repository (repo)** | Depo | Bir projenin tüm dosyaları ve geçmişi |
+| **Commit** | İşleme / kayıt | Değişikliklerin bir "fotoğrafı"; geçmişteki bir nokta |
+| **Clone** | Klonlama | Bir depoyu bilgisayarına indirmek |
+| **Push** | İtme | Yereldeki değişiklikleri GitHub'a göndermek |
+| **Pull** | Çekme | GitHub'daki değişiklikleri bilgisayarına indirmek |
+| **Branch** | Dal | Ana hattı bozmadan ayrı bir çalışma kolu |
+| **Merge** | Birleştirme | Bir dalı diğerine katmak |
+| **Fork** | Çatallama | Başkasının deposunun kendi hesabına kopyası |
+| **Pull Request (PR)** | Birleştirme isteği | "Şu değişikliklerimi projene alır mısın?" teklifi |
+| **Issue** | Konu / sorun | Hata bildirimi, öneri veya yapılacaklar notu |
+| **README** | Beni oku | Deponun ana tanıtım/kullanım sayfası |
+| **Remote** | Uzak depo | GitHub'daki kopyanın adresi (genelde `origin`) |
+
+---
+
+# Hesap oluşturma
+
+1. <https://github.com> adresine git, **Sign up**'a tıkla.
+2. Bir **e-posta**, **parola** ve **kullanıcı adı** belirle.
+   - Kullanıcı adın profil adresin olur: `github.com/kullaniciadi`. Akademik
+     kimliğinin parçası olacağı için sade ve kalıcı bir ad seç (örn.
+     `aysenuryilmaz` gibi).
+3. E-postanı doğrula. Ücretsiz plan araştırma için fazlasıyla yeterlidir.
+
+::: {.callout-tip}
+## Akademik avantajlar
+- **GitHub Education / Student & Teacher** programlarıyla bazı ücretli
+  özellikler akademisyenlere ücretsiz açılabilir. Kurumsal e-postanla
+  başvurmayı dene.
+- Profilini bir **fotoğraf**, **kurum** ve kısa **biyografi** ile doldur;
+  yayınlarına atıf alırken bu profil görünürlüğünü artırır.
+:::
+
+İki adımlı doğrulamayı (2FA) açman önerilir; GitHub bunu zaten birçok hesap
+için zorunlu tutmaktadır.
+
+---
+
+# Hangi yöntemi seçmeliyim?
+
+```{mermaid}
+%%| eval: true
+flowchart TD
+    A["Ne yapacaksın?"] --> B["Sadece dosya yükle/düzenle,<br/>hızlı bir şey"]
+    A --> C["Düzenli proje,<br/>bilgisayarda çalışacaksın"]
+    A --> D["Çok dosya, otomasyon,<br/>R/Python projesi"]
+    B --> B1["🟢 Tarayıcı<br/>(GitHub web arayüzü)"]
+    C --> C1["🟢 GitHub Desktop<br/>(önerilen başlangıç)"]
+    D --> D1["🔵 Terminal / Git komutları<br/>+ RStudio entegrasyonu"]
+```
+
+Özet öneri: **Yeni başlıyorsan GitHub Desktop**. R/Python ile yoğun
+çalışacaksan **terminal** (ya da RStudio'nun Git paneli) uzun vadede daha
+güçlüdür.
+
+---
+
+# 🟢 En kolay yol: GitHub web arayüzü
+
+Hiçbir program kurmadan, sadece tarayıcıyla yapılabilecek işler.
+
+## Yeni depo (repository) oluşturma
+
+1. Sağ üstteki **+** → **New repository**.
+2. **Repository name**: proje adı (boşluk yerine tire kullan: `kizamik-analizi`).
+3. **Description**: kısa açıklama (isteğe bağlı).
+4. **Public** (herkese açık) ya da **Private** (sadece sen ve davet
+   ettiklerin) seç.
+5. **Add a README file** kutusunu işaretle — deponun ilk sayfası hazır gelir.
+6. İstersen bir **.gitignore** şablonu (örn. *R*) ve bir **lisans** seç.
+7. **Create repository**.
+
+## Dosya yükleme (sürükle-bırak)
+
+Depo sayfasında **Add file → Upload files** de, dosyalarını pencereye
+sürükle, alttaki kutuya kısa bir açıklama yaz ve **Commit changes**'e bas.
+Bu kadar.
+
+::: {.callout-note}
+Web arayüzünden tek seferde **çok büyük veya çok sayıda** dosya yüklemek
+zordur. Düzenli çalışacaksan GitHub Desktop veya terminale geç.
+:::
+
+## Tarayıcıda dosya düzenleme
+
+Bir dosyaya tıkla → sağ üstteki **kalem (✏️) simgesine** bas → düzenle →
+**Commit changes**. Küçük düzeltmeler (bir yazım hatası, README'ye bir satır)
+için en hızlı yöntem budur.
+
+İpucu: Depo ana sayfasında klavyeden **`.`** (nokta) tuşuna basarsan, depo
+tarayıcı içinde tam bir **VS Code** düzenleyicisinde açılır
+(`github.dev`) — kurulum gerektirmez.
+
+---
+
+# 🟢 GitHub Desktop ile çalışma
+
+Yeni başlayanlar için en rahat yol. Komut yazmadan, butonlarla commit /
+push / pull yaparsın.
+
+## Kurulum ve giriş
+
+1. <https://desktop.github.com> adresinden indir, kur.
+2. Aç → **Sign in to GitHub.com** → tarayıcıda hesabınla yetki ver.
+   (Kimlik doğrulamayı program kendi halleder; parola/anahtar derdi yok.)
+3. Adını ve e-postanı sorarsa, GitHub hesabınla aynısını gir.
+
+## Temel iş akışı
+
+**a) Depoyu bilgisayarına alma (clone):**
+**File → Clone repository** → listeden deponu seç → bilgisayarında bir
+klasör belirle → **Clone**.
+
+**b) Yeni depo oluşturma:**
+**File → New repository** → ad, klasör, README seç → **Create repository** →
+sağdaki **Publish repository** ile GitHub'a yükle.
+
+**c) Değişiklik yapma ve kaydetme (commit):**
+Dosyaları her zamanki programlarınla (RStudio, VS Code, Excel...) düzenle ve
+kaydet. GitHub Desktop'a dönünce **Changes** sekmesinde değişen dosyaları
+görürsün:
+
+1. Kaydetmek istediklerinin yanındaki kutuları işaretle.
+2. Sol altta **Summary** kutusuna kısa bir başlık yaz
+   (örn. "Yaş standardizasyonu eklendi").
+3. **Commit to main**'e bas.
+
+**d) GitHub'a gönderme (push):**
+Üstteki **Push origin** düğmesine bas. Artık değişikliklerin bulutta.
+
+**e) Güncellemeleri alma (pull):**
+Başka biri (veya başka bir bilgisayarın) değişiklik yaptıysa, çalışmaya
+başlamadan önce **Fetch origin** → **Pull origin** ile en güncel hali çek.
+
+::: {.callout-tip}
+## Altın kural
+Çalışmaya başlamadan **pull**, işin bitince **commit + push**. Bu sıra
+çakışmaların çoğunu önler.
+:::
+
+---
+
+# 🔵 Terminal / komut satırı ile çalışma
+
+Daha güçlü ve hızlı, ama biraz öğrenme gerektirir. R kullanıcıları çoğu işi
+**RStudio'nun Git paneliyle** de yapabilir (aynı komutların butonlu hali);
+yine de komutları bilmek işine yarar.
+
+## Git'i kurma
+
+- **Windows:** <https://git-scm.com> adresinden Git for Windows'u kur
+  (kurulum sırasındaki varsayılanlar yeterli). Beraberinde **Git Bash**
+  terminali gelir.
+- **macOS:** Terminale `git --version` yaz; kurulu değilse macOS kurmayı
+  önerir. Alternatif: `brew install git`.
+- **Linux:** `sudo apt install git` (Debian/Ubuntu) ya da dağıtımının paket
+  yöneticisi.
+
+## İlk kez bir defalık ayar
+
+Commit'lere adının yazılması için kimliğini tanıt:
+
+```bash
+git config --global user.name "Ayşe Yılmaz"
+git config --global user.email "ayse@ornek.edu.tr"
+```
+
+## Kimlik doğrulama (önemli!)
+
+GitHub artık terminalden **parola kabul etmiyor.** İki yaygın yol var:
+
+::: {.panel-tabset}
+### Yöntem 1: GitHub CLI (en kolay)
+[GitHub CLI](https://cli.github.com) aracını kur, sonra:
+
+```bash
+gh auth login
+```
+
+Sorulara tarayıcıdan yanıt ver; gerisini kendisi halleder. Sonraki tüm
+`push`/`pull` işlemleri sorunsuz çalışır.
+
+### Yöntem 2: SSH anahtarı
+Bir defa kur, bir daha uğraşma:
+
+```bash
+# 1) Anahtar üret (e-postanı yaz)
+ssh-keygen -t ed25519 -C "ayse@ornek.edu.tr"
+# Enter'lara bas (varsayılan konum ve boş parola olur)
+
+# 2) Açık anahtarı ekrana yazdır ve kopyala
+cat ~/.ssh/id_ed25519.pub
+```
+
+Kopyaladığın metni GitHub'da **Settings → SSH and GPG keys → New SSH key**
+altına yapıştır. Artık depoları `git@github.com:...` (SSH) adresiyle
+klonlayabilirsin.
+:::
+
+::: {.callout-note}
+En kolayı: kimlik doğrulamayı dert etmek istemiyorsan **GitHub Desktop**
+veya **GitHub CLI** kullan; ikisi de bu işi senin yerine yapar.
+:::
+
+## Günlük kullanılan komutlar
+
+```bash
+# Bir depoyu indir (klonla)
+git clone https://github.com/kullanici/proje.git
+
+# Klasöre gir
+cd proje
+
+# Neyin değiştiğini gör
+git status
+
+# Değişiklikleri hazırla (stage)
+git add analiz.R            # tek dosya
+git add .                   # tüm değişiklikler
+
+# Kaydet (commit) — mesaj yaz
+git commit -m "Yaş standardizasyonu eklendi"
+
+# GitHub'a gönder
+git push
+
+# GitHub'dan güncellemeleri al
+git pull
+
+# Geçmişi gör
+git log --oneline
+```
+
+Tipik bir günün özeti:
+
+```bash
+git pull                       # güne güncel başla
+# ... RStudio'da çalış, dosyaları kaydet ...
+git add .
+git commit -m "Tabloları güncelledim"
+git push                       # günü buluta yazarak bitir
+```
+
+## Dallarla (branch) çalışmak
+
+Ana hattı (`main`) bozmadan deneme yapmak için:
+
+```bash
+git switch -c yeni-analiz       # yeni dal aç ve geç
+# ... çalış, commit'le ...
+git switch main                 # ana dala dön
+git merge yeni-analiz           # denemeni ana dala kat
+```
+
+## Sıfırdan yeni depo (yereldeki klasörü GitHub'a bağlama)
+
+```bash
+cd mevcut-projem
+git init
+git add .
+git commit -m "İlk commit"
+# GitHub'da boş bir depo açtıktan sonra adresini bağla:
+git remote add origin git@github.com:kullanici/projem.git
+git push -u origin main
+```
+
+## `.gitignore`: istenmeyen dosyaları hariç tutmak {#gitignore-istenmeyen-dosyalari-haric-tutmak}
+
+Bazı dosyalar **asla** GitHub'a gitmemeli: hasta verisi, devasa çıktı
+dosyaları, geçici dosyalar. Depo köküne `.gitignore` adlı bir dosya koy ve
+içine kalıpları yaz:
+
+```{.bash filename=".gitignore"}
+# Veri klasörünün tamamı (HASTA VERİSİ!)
+data/
+*.csv
+*.xlsx
+*.dta
+*.sav
+
+# R/RStudio geçici dosyaları
+.Rhistory
+.RData
+.Rproj.user/
+
+# Çıktılar
+*.html
+/_site/
+/docs/
+
+# İşletim sistemi çöpleri
+.DS_Store
+Thumbs.db
+```
+
+::: {.callout-warning}
+`.gitignore`, dosyayı **henüz hiç commit etmediysen** çalışır. Bir veri
+dosyasını yanlışlıkla yükledikten sonra silmek yetmez — geçmişten temizlemek
+gerekir (`git rm --cached dosya` + commit, gerekirse geçmiş temizliği). Bu
+yüzden `.gitignore`'u **en baştan** ayarla.
+:::
+
+---
+
+# README sayfalarını süslemek
+
+`README.md`, deponun vitrinidir; biri deponu açtığında ilk gördüğü şeydir.
+**Markdown** denen sade biçimlendirme diliyle yazılır (Quarto'da
+kullandığının aynısı).
+
+## Markdown'ın temelleri
+
+```markdown
+# Büyük başlık (H1)
+## Alt başlık (H2)
+### Daha alt başlık (H3)
+
+Normal metin. **Kalın**, *italik*, `kod parçası`.
+
+- Madde
+- Madde
+  - Alt madde
+
+1. Numaralı
+2. Liste
+
+> Alıntı kutusu
+
+[Bağlantı metni](https://ornek.com)
+
+![Görsel açıklaması](gorsel/sema.png)
+```
+
+## Tablo
+
+```markdown
+| Değişken | Tip | Açıklama |
+|----------|-----|----------|
+| yas      | sayısal | Yıl olarak yaş |
+| cinsiyet | kategorik | K/E |
+```
+
+## Kod blokları
+
+Üç ters tırnak (```` ``` ````) arasına dil adıyla:
+
+````markdown
+```r
+library(tidyverse)
+veri %>% count(cinsiyet)
+```
+````
+
+## Rozetler (badges) ile süsleme
+
+Rozetler README'ye renkli küçük etiketler ekler. <https://shields.io>
+adresinden üretebilirsin. Örnekler:
+
+```markdown
+![Lisans](https://img.shields.io/badge/lisans-MIT-blue)
+![R](https://img.shields.io/badge/R-4.4-276DC3?logo=r)
+![Durum](https://img.shields.io/badge/durum-aktif-success)
+```
+
+## İçindekiler, emoji ve görseller
+
+- Uzun README'lerde başlıklara bağlantı vererek elle bir **içindekiler**
+  listesi yapabilirsin.
+- Emoji'leri doğrudan yapıştırabilir ya da `:rocket:` 🚀, `:warning:` ⚠️
+  gibi kısa kodlarla yazabilirsin.
+- Görselleri depo içinde bir `img/` klasörüne koyup
+  `![](img/akis-semasi.png)` ile gömmek en sağlam yoldur.
+
+## İyi bir araştırma README'sinde ne olmalı?
+
+1. **Projenin adı ve tek cümlelik amacı**
+2. **İçerik:** hangi klasörde ne var (kısa bir dosya haritası)
+3. **Nasıl çalıştırılır:** gereken paketler, çalıştırma sırası
+4. **Veri notu:** verinin nereden geldiği / neden depoda olmadığı
+5. **Atıf:** çalışmaya nasıl atıf verilmeli
+6. **Lisans ve iletişim**
+
+::: {.callout-tip}
+Düzenlerken GitHub'daki dosya görünümünde **Preview** sekmesiyle nasıl
+göründüğünü canlı kontrol edebilirsin.
+:::
+
+---
+
+# Issue (konu) açmak
+
+**Issue**, bir depo hakkında konuşma açtığın yerdir: hata bildirimi, soru,
+yapılacaklar listesi ya da öneri. Hem kendi projende hem başkasınınkinde
+kullanılır.
+
+## Nasıl açılır?
+
+1. Deponun üstündeki **Issues** sekmesine git → **New issue**.
+2. Kısa ama net bir **başlık** yaz (örn. "Yaş gruplaması 85+ için hatalı").
+3. Açıklamaya şunları ekle:
+   - Ne bekliyordun, ne oldu
+   - Nasıl tekrar üretilir (mümkünse küçük bir kod parçası)
+   - Sürüm bilgisi (R sürümü, paket sürümü)
+4. **Submit new issue**.
+
+## İşini kolaylaştıran özellikler
+
+- **Labels (etiketler):** `hata`, `iyileştirme`, `soru` gibi renkli
+  sınıflandırmalar.
+- **Assignees:** issue'yu birine ata.
+- **@kullanıcı** yazarak birine haber ver; **#12** yazarak başka bir
+  issue'ya bağlan.
+- Onay kutulu yapılacaklar listesi:
+
+  ```markdown
+  - [x] Veri temizliği
+  - [ ] Yaş standardizasyonu
+  - [ ] Tabloların kontrolü
+  ```
+
+- Bir commit mesajına `Fixes #14` yazarsan, o commit GitHub'a ulaştığında
+  14 numaralı issue **otomatik kapanır**.
+
+::: {.callout-note}
+Tek başına çalışsan bile issue'lar mükemmel bir **yapılacaklar / fikir
+defteridir.** Aklına geleni issue olarak açıp sonra kapatabilirsin.
+:::
+
+---
+
+# Katkı sağlamak (contribute)
+
+Başkasının projesini geliştirmenin standart yolu **fork → değişiklik →
+pull request** akışıdır. Çünkü genelde başkasının deposuna doğrudan yazma
+yetkin olmaz.
+
+## Adım adım (kolay yol — tarayıcı + Desktop)
+
+1. **Fork:** Katkı vereceğin deponun sağ üstündeki **Fork** düğmesine bas.
+   Artık o deponun kendi hesabında bir kopyası var.
+2. **Clone:** Kendi kopyanı GitHub Desktop ile bilgisayarına al.
+3. **Branch:** Değişiklik için yeni bir dal aç (örn. `tablo-duzeltme`).
+4. **Değişiklik + commit + push:** Düzeltmeni yap, commit'le, kendi
+   forkuna push'la.
+5. **Pull Request (PR):** GitHub'da forkunun sayfasında çıkan
+   **Compare & pull request** düğmesine bas. Ne değiştirdiğini açıkla ve
+   **Create pull request** de.
+6. Proje sahibi PR'ını inceler, yorum yapar, kabul ederse **merge** eder.
+
+## Aynı işin terminaldeki hali
+
+```bash
+# Forkunu klonladıktan sonra
+git switch -c tablo-duzeltme
+# ... düzelt ...
+git add .
+git commit -m "Tablo başlıkları düzeltildi"
+git push -u origin tablo-duzeltme
+# Ardından GitHub'daki bağlantıdan PR aç
+```
+
+::: {.callout-tip}
+## Katkı görgü kuralları
+- Önce projenin `CONTRIBUTING.md` dosyasına ve açık issue'lara bak.
+- Büyük bir değişiklikten önce bir **issue açıp niyetini** belirt;
+  emek harcamadan önce sahibinin onayını al.
+- Bir PR'da **tek bir konuya** odaklan; incelemesi kolay olur.
+:::
+
+---
+
+# Web sitesi yayınlamak (GitHub Pages + Quarto)
+
+GitHub, depolarını ücretsiz bir web sitesine çevirebilir: **GitHub Pages**.
+Quarto kullandığın için en pratik yolu Quarto üzerinden anlatıyoruz —
+**bu rehber de tam olarak böyle yayımlanabilir.**
+
+## Yol A — Quarto ile (önerilen)
+
+Quarto'nun yerleşik komutu çoğu işi otomatik yapar.
+`quarto publish gh-pages` komutu ilk çalıştırıldığında, yoksa hem yerelde hem uzakta bir `gh-pages` dalını otomatik oluşturur.
+
+**1) Çıktıları Git'in dışında tut.** Quarto sitesi `_site/` (veya kitap için
+`_book/`) klasörüne render edilir; bunları depoya koymaya gerek yok.
+Depo köküne bir `.gitignore` ekle:
+
+```{.bash filename=".gitignore"}
+/.quarto/
+/_site/
+```
+
+**2) Yayımla.** Proje klasöründe, `gh-pages` dalında **olmadığından** emin
+olarak şu komutu çalıştır:
+
+```bash
+quarto publish gh-pages
+```
+
+Bu konfigürasyon değişikliğinden sonra GitHub sitenin dağıtımını tetikler; ayrıca `main` dalına her commit ve push yaptığında siten güncellenir.
+
+**3) Sonuç.** Proje siteleri (`https://kullanici.github.io/depo/`) için
+GitHub yeni dalı algılar ve Pages'i `gh-pages` dalından yayımlayacak şekilde kendisi yapılandırır; Settings : Pages altında elle bir ayar gerekmez.
+
+::: {.callout-note}
+## Kullanıcı/kurum sitesi farkı
+Kullanıcı ve kurum siteleri (`https://kullanici.github.io/` adresinde sunulanlar) GitHub tarafında farklı davranır: varsayılan yayın kaynakları `gh-pages` değil `main` dalıdır. Bu durumda ilk `quarto publish gh-pages` çalıştırmasından sonra **Settings : Pages** altında kaynak dalı elle `gh-pages` olarak değiştirmen gerekir; Quarto bu durumu algıladığında ilgili ayar sayfasına doğrudan bir bağlantı içeren bir uyarı yazdırır.
+:::
+
+### Otomatik yayın (GitHub Actions) — isteğe bağlı
+
+Her seferinde komut çalıştırmak istemezsen, depoya bir GitHub Actions iş
+akışı ekleyip **her push'ta sitenin otomatik yeniden derlenmesini**
+sağlayabilirsin. Önce bir kez `quarto publish gh-pages` çalıştırıp dalı
+oluşturman, sonra `.github/workflows/publish.yml` eklemen önerilir.
+Ayrıntılar için Quarto belgeleri:
+<https://quarto.org/docs/publishing/github-pages.html>.
+
+## Yol B — Quarto'suz, düz HTML/Markdown
+
+Elinde hazır bir `index.html` veya Markdown sayfaları varsa:
+
+1. Depo → **Settings → Pages**.
+2. **Source** olarak bir dal (örn. `main`) ve klasör seç: `/ (root)` ya da
+   `/docs`.
+3. Kaydet. Birkaç dakika içinde
+   `https://kullanici.github.io/depo/` adresinde yayında olur.
+
+Jekyll işlemesini istemiyorsan depo köküne boş bir **`.nojekyll`** dosyası
+ekle.
+
+::: {.callout-tip}
+Yayınlanan adresi her zaman **Settings → Pages** sayfasının en üstünde
+görebilirsin. İlk yayında birkaç dakika gecikme normaldir.
+:::
+
+---
+
+# Repo yönetimi
+
+Deponu derli toplu ve güvenli tutmak için.
+
+## İşbirlikçi (collaborator) ekleme
+
+Özel bir depoda başkalarının da yazabilmesi için:
+**Settings → Collaborators → Add people** → kullanıcı adıyla davet et.
+Açık (public) depoda herkes görebilir ama yazmak için yine davet/PR gerekir.
+
+## Dalları koruma (branch protection)
+
+Ekip büyüdükçe `main` dalını koruyabilirsin: **Settings → Branches** altında
+"doğrudan push'u engelle, değişiklikler PR ile gelsin ve onaylansın" gibi
+kurallar tanımlanır. Bu, ana analizin yanlışlıkla bozulmasını önler.
+
+## Sürümler (releases) ve etiketler
+
+Bir makaleyi gönderdiğinde veya analizi "dondurduğunda" o anı bir **release**
+olarak işaretle: depo sağ taraftaki **Releases → Create a new release** →
+bir etiket (örn. `v1.0`) ve not. Böylece "makalede kullanılan tam sürüm"
+her zaman bulunur.
+
+::: {.callout-tip}
+## Zenodo ile DOI
+GitHub deposunu **Zenodo**'ya bağlayıp bir release yayımladığında,
+çalışmana **atıf verilebilir bir DOI** atanır. Bu, kodunu makalende
+kaynak gösterebilmen için çok kullanışlıdır.
+:::
+
+## Lisans eklemek
+
+Lisanssız kod, başkalarının yasal olarak kullanamayacağı koddur.
+**Add file → Create new file → `LICENSE`** yazınca GitHub sana hazır
+şablonlar sunar. Yaygın seçenekler:
+
+- **MIT** — çok serbest, basit.
+- **GPL-3.0** — türev çalışmaların da açık kalmasını ister.
+- **CC-BY-4.0** — kod değil de veri/doküman için daha uygundur.
+
+## Düzenli depo için kontrol listesi
+
+- [ ] Açıklayıcı bir **README.md**
+- [ ] Hassas/büyük dosyaları dışlayan **.gitignore**
+- [ ] Bir **LICENSE**
+- [ ] Anlamlı klasör yapısı (`R/`, `data/` (boş ya da örnek), `output/`, `docs/`)
+- [ ] Net commit mesajları
+
+---
+
+# Sık karşılaşılan sorunlar (SSS)
+
+**"Push reddedildi / updates were rejected" hatası alıyorum.**
+Muhtemelen GitHub'da senin bilgisayarında olmayan değişiklikler var. Önce
+`git pull` (veya Desktop'ta **Pull origin**), sonra tekrar push'la.
+
+**Merge conflict (birleştirme çakışması) çıktı.**
+İki kişi aynı satırı değiştirdiğinde olur. Git, dosyaya `<<<<<<<`,
+`=======`, `>>>>>>>` işaretleri koyar. İstediğin hali bırakıp bu işaretleri
+silersin, sonra commit'lersin. RStudio ve VS Code bunu görsel olarak
+kolaylaştırır.
+
+**Yanlışlıkla hasta verisi/büyük dosya yükledim.**
+`.gitignore`'a ekleyip `git rm --cached dosya` ile takibi durdur, commit'le.
+Dosya **geçmişte** kaldıysa tamamen temizlemek için ek araçlar gerekir
+(`git filter-repo` gibi) — bu durumda yardım iste, çünkü geçmiş yeniden
+yazılır.
+
+**Son commit mesajımı yanlış yazdım.**
+Henüz push'lamadıysan: `git commit --amend -m "Doğru mesaj"`.
+
+**Bir dosyayı son commit'teki haline geri almak istiyorum.**
+`git restore dosya.R` (henüz commit edilmemiş değişiklikleri siler — dikkat).
+
+**Hesabımda iki bilgisayar var, hangisi güncel?**
+Her zaman **GitHub'daki kopya gerçeğin kaynağıdır.** Çalışmaya başlamadan
+pull, bitince push alışkanlığı bu karışıklığı bitirir.
+
+---
+
+# Faydalı kaynaklar {.unnumbered}
+
+- GitHub resmi dokümantasyon (Türkçe arayüz mevcut): <https://docs.github.com>
+- GitHub Desktop: <https://desktop.github.com>
+- Git resmi sitesi: <https://git-scm.com>
+- Quarto + GitHub Pages: <https://quarto.org/docs/publishing/github-pages.html>
+- Rozet üretici (shields.io): <https://shields.io>
+- "Happy Git with R" (R kullanıcıları için Git rehberi): <https://happygitwithr.com>
+
+::: {.callout-note appearance="simple"}
+Bu rehber sürekli geliştirilebilir. Bir eksik veya hata görürsen — artık
+nasıl yapıldığını biliyorsun — bir **issue** aç ya da bir **pull request**
+gönder. 🎉
+:::
