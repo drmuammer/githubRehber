@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Hazırlayan: [Muammer BESLEN]">
+
+<title>Epidemiyologlar İçin GitHub Rehberi</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6e23cb75faad6cc81c270c8417580940.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0d95886b8c79b3d8736c9b8ffb1ddceb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6e23cb75faad6cc81c270c8417580940.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sonuç yok",
+    "search-matching-documents-text": "eşleşen belgeler",
+    "search-copy-link-title": "Aramak için bağlantıyı kopyalayın",
+    "search-hide-matches-text": "Ek eşleşmeleri gizle",
+    "search-more-match-text": "bu belgede bir tane daha eşleşme",
+    "search-more-matches-text": "bu belgede daha fazla eşleşme",
+    "search-clear-button-title": "Temizle",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "İptal et",
+    "search-submit-button-title": "Gönder",
+    "search-label": "Ara"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">İçindekiler</h2>
+   
+  <ul>
+  <li><a href="#bu-rehber-kime-ve-neye-göre" id="toc-bu-rehber-kime-ve-neye-göre" class="nav-link active" data-scroll-target="#bu-rehber-kime-ve-neye-göre">Bu rehber kime ve neye göre</a></li>
+  <li><a href="#git-ve-github-nedir" id="toc-git-ve-github-nedir" class="nav-link" data-scroll-target="#git-ve-github-nedir"><span class="header-section-number">1</span> Git ve GitHub nedir?</a>
+  <ul class="collapse">
+  <li><a href="#neden-epidemiyoloji-için-önemli" id="toc-neden-epidemiyoloji-için-önemli" class="nav-link" data-scroll-target="#neden-epidemiyoloji-için-önemli"><span class="header-section-number">1.1</span> Neden epidemiyoloji için önemli?</a></li>
+  </ul></li>
+  <li><a href="#temel-sözlük" id="toc-temel-sözlük" class="nav-link" data-scroll-target="#temel-sözlük"><span class="header-section-number">2</span> Temel sözlük</a></li>
+  <li><a href="#hesap-oluşturma" id="toc-hesap-oluşturma" class="nav-link" data-scroll-target="#hesap-oluşturma"><span class="header-section-number">3</span> Hesap oluşturma</a></li>
+  <li><a href="#hangi-yöntemi-seçmeliyim" id="toc-hangi-yöntemi-seçmeliyim" class="nav-link" data-scroll-target="#hangi-yöntemi-seçmeliyim"><span class="header-section-number">4</span> Hangi yöntemi seçmeliyim?</a></li>
+  <li><a href="#en-kolay-yol-github-web-arayüzü" id="toc-en-kolay-yol-github-web-arayüzü" class="nav-link" data-scroll-target="#en-kolay-yol-github-web-arayüzü"><span class="header-section-number">5</span> 🟢 En kolay yol: GitHub web arayüzü</a>
+  <ul class="collapse">
+  <li><a href="#yeni-depo-repository-oluşturma" id="toc-yeni-depo-repository-oluşturma" class="nav-link" data-scroll-target="#yeni-depo-repository-oluşturma"><span class="header-section-number">5.1</span> Yeni depo (repository) oluşturma</a></li>
+  <li><a href="#dosya-yükleme-sürükle-bırak" id="toc-dosya-yükleme-sürükle-bırak" class="nav-link" data-scroll-target="#dosya-yükleme-sürükle-bırak"><span class="header-section-number">5.2</span> Dosya yükleme (sürükle-bırak)</a></li>
+  <li><a href="#tarayıcıda-dosya-düzenleme" id="toc-tarayıcıda-dosya-düzenleme" class="nav-link" data-scroll-target="#tarayıcıda-dosya-düzenleme"><span class="header-section-number">5.3</span> Tarayıcıda dosya düzenleme</a></li>
+  </ul></li>
+  <li><a href="#github-desktop-ile-çalışma" id="toc-github-desktop-ile-çalışma" class="nav-link" data-scroll-target="#github-desktop-ile-çalışma"><span class="header-section-number">6</span> 🟢 GitHub Desktop ile çalışma</a>
+  <ul class="collapse">
+  <li><a href="#kurulum-ve-giriş" id="toc-kurulum-ve-giriş" class="nav-link" data-scroll-target="#kurulum-ve-giriş"><span class="header-section-number">6.1</span> Kurulum ve giriş</a></li>
+  <li><a href="#temel-iş-akışı" id="toc-temel-iş-akışı" class="nav-link" data-scroll-target="#temel-iş-akışı"><span class="header-section-number">6.2</span> Temel iş akışı</a></li>
+  </ul></li>
+  <li><a href="#terminal-komut-satırı-ile-çalışma" id="toc-terminal-komut-satırı-ile-çalışma" class="nav-link" data-scroll-target="#terminal-komut-satırı-ile-çalışma"><span class="header-section-number">7</span> 🔵 Terminal / komut satırı ile çalışma</a>
+  <ul class="collapse">
+  <li><a href="#giti-kurma" id="toc-giti-kurma" class="nav-link" data-scroll-target="#giti-kurma"><span class="header-section-number">7.1</span> Git’i kurma</a></li>
+  <li><a href="#ilk-kez-bir-defalık-ayar" id="toc-ilk-kez-bir-defalık-ayar" class="nav-link" data-scroll-target="#ilk-kez-bir-defalık-ayar"><span class="header-section-number">7.2</span> İlk kez bir defalık ayar</a></li>
+  <li><a href="#kimlik-doğrulama-önemli" id="toc-kimlik-doğrulama-önemli" class="nav-link" data-scroll-target="#kimlik-doğrulama-önemli"><span class="header-section-number">7.3</span> Kimlik doğrulama (önemli!)</a></li>
+  <li><a href="#günlük-kullanılan-komutlar" id="toc-günlük-kullanılan-komutlar" class="nav-link" data-scroll-target="#günlük-kullanılan-komutlar"><span class="header-section-number">7.4</span> Günlük kullanılan komutlar</a></li>
+  <li><a href="#dallarla-branch-çalışmak" id="toc-dallarla-branch-çalışmak" class="nav-link" data-scroll-target="#dallarla-branch-çalışmak"><span class="header-section-number">7.5</span> Dallarla (branch) çalışmak</a></li>
+  <li><a href="#sıfırdan-yeni-depo-yereldeki-klasörü-githuba-bağlama" id="toc-sıfırdan-yeni-depo-yereldeki-klasörü-githuba-bağlama" class="nav-link" data-scroll-target="#sıfırdan-yeni-depo-yereldeki-klasörü-githuba-bağlama"><span class="header-section-number">7.6</span> Sıfırdan yeni depo (yereldeki klasörü GitHub’a bağlama)</a></li>
+  <li><a href="#gitignore-istenmeyen-dosyalari-haric-tutmak" id="toc-gitignore-istenmeyen-dosyalari-haric-tutmak" class="nav-link" data-scroll-target="#gitignore-istenmeyen-dosyalari-haric-tutmak"><span class="header-section-number">7.7</span> <code>.gitignore</code>: istenmeyen dosyaları hariç tutmak</a></li>
+  </ul></li>
+  <li><a href="#readme-sayfalarını-süslemek" id="toc-readme-sayfalarını-süslemek" class="nav-link" data-scroll-target="#readme-sayfalarını-süslemek"><span class="header-section-number">8</span> README sayfalarını süslemek</a>
+  <ul class="collapse">
+  <li><a href="#markdownın-temelleri" id="toc-markdownın-temelleri" class="nav-link" data-scroll-target="#markdownın-temelleri"><span class="header-section-number">8.1</span> Markdown’ın temelleri</a></li>
+  <li><a href="#tablo" id="toc-tablo" class="nav-link" data-scroll-target="#tablo"><span class="header-section-number">8.2</span> Tablo</a></li>
+  <li><a href="#kod-blokları" id="toc-kod-blokları" class="nav-link" data-scroll-target="#kod-blokları"><span class="header-section-number">8.3</span> Kod blokları</a></li>
+  <li><a href="#rozetler-badges-ile-süsleme" id="toc-rozetler-badges-ile-süsleme" class="nav-link" data-scroll-target="#rozetler-badges-ile-süsleme"><span class="header-section-number">8.4</span> Rozetler (badges) ile süsleme</a></li>
+  <li><a href="#içindekiler-emoji-ve-görseller" id="toc-içindekiler-emoji-ve-görseller" class="nav-link" data-scroll-target="#içindekiler-emoji-ve-görseller"><span class="header-section-number">8.5</span> İçindekiler, emoji ve görseller</a></li>
+  <li><a href="#iyi-bir-araştırma-readmesinde-ne-olmalı" id="toc-iyi-bir-araştırma-readmesinde-ne-olmalı" class="nav-link" data-scroll-target="#iyi-bir-araştırma-readmesinde-ne-olmalı"><span class="header-section-number">8.6</span> İyi bir araştırma README’sinde ne olmalı?</a></li>
+  </ul></li>
+  <li><a href="#issue-konu-açmak" id="toc-issue-konu-açmak" class="nav-link" data-scroll-target="#issue-konu-açmak"><span class="header-section-number">9</span> Issue (konu) açmak</a>
+  <ul class="collapse">
+  <li><a href="#nasıl-açılır" id="toc-nasıl-açılır" class="nav-link" data-scroll-target="#nasıl-açılır"><span class="header-section-number">9.1</span> Nasıl açılır?</a></li>
+  <li><a href="#işini-kolaylaştıran-özellikler" id="toc-işini-kolaylaştıran-özellikler" class="nav-link" data-scroll-target="#işini-kolaylaştıran-özellikler"><span class="header-section-number">9.2</span> İşini kolaylaştıran özellikler</a></li>
+  </ul></li>
+  <li><a href="#katkı-sağlamak-contribute" id="toc-katkı-sağlamak-contribute" class="nav-link" data-scroll-target="#katkı-sağlamak-contribute"><span class="header-section-number">10</span> Katkı sağlamak (contribute)</a>
+  <ul class="collapse">
+  <li><a href="#adım-adım-kolay-yol-tarayıcı-desktop" id="toc-adım-adım-kolay-yol-tarayıcı-desktop" class="nav-link" data-scroll-target="#adım-adım-kolay-yol-tarayıcı-desktop"><span class="header-section-number">10.1</span> Adım adım (kolay yol — tarayıcı + Desktop)</a></li>
+  <li><a href="#aynı-işin-terminaldeki-hali" id="toc-aynı-işin-terminaldeki-hali" class="nav-link" data-scroll-target="#aynı-işin-terminaldeki-hali"><span class="header-section-number">10.2</span> Aynı işin terminaldeki hali</a></li>
+  </ul></li>
+  <li><a href="#web-sitesi-yayınlamak-github-pages-quarto" id="toc-web-sitesi-yayınlamak-github-pages-quarto" class="nav-link" data-scroll-target="#web-sitesi-yayınlamak-github-pages-quarto"><span class="header-section-number">11</span> Web sitesi yayınlamak (GitHub Pages + Quarto)</a>
+  <ul class="collapse">
+  <li><a href="#yol-a-quarto-ile-önerilen" id="toc-yol-a-quarto-ile-önerilen" class="nav-link" data-scroll-target="#yol-a-quarto-ile-önerilen"><span class="header-section-number">11.1</span> Yol A — Quarto ile (önerilen)</a>
+  <ul class="collapse">
+  <li><a href="#otomatik-yayın-github-actions-isteğe-bağlı" id="toc-otomatik-yayın-github-actions-isteğe-bağlı" class="nav-link" data-scroll-target="#otomatik-yayın-github-actions-isteğe-bağlı"><span class="header-section-number">11.1.1</span> Otomatik yayın (GitHub Actions) — isteğe bağlı</a></li>
+  </ul></li>
+  <li><a href="#yol-b-quartosuz-düz-htmlmarkdown" id="toc-yol-b-quartosuz-düz-htmlmarkdown" class="nav-link" data-scroll-target="#yol-b-quartosuz-düz-htmlmarkdown"><span class="header-section-number">11.2</span> Yol B — Quarto’suz, düz HTML/Markdown</a></li>
+  </ul></li>
+  <li><a href="#repo-yönetimi" id="toc-repo-yönetimi" class="nav-link" data-scroll-target="#repo-yönetimi"><span class="header-section-number">12</span> Repo yönetimi</a>
+  <ul class="collapse">
+  <li><a href="#işbirlikçi-collaborator-ekleme" id="toc-işbirlikçi-collaborator-ekleme" class="nav-link" data-scroll-target="#işbirlikçi-collaborator-ekleme"><span class="header-section-number">12.1</span> İşbirlikçi (collaborator) ekleme</a></li>
+  <li><a href="#dalları-koruma-branch-protection" id="toc-dalları-koruma-branch-protection" class="nav-link" data-scroll-target="#dalları-koruma-branch-protection"><span class="header-section-number">12.2</span> Dalları koruma (branch protection)</a></li>
+  <li><a href="#sürümler-releases-ve-etiketler" id="toc-sürümler-releases-ve-etiketler" class="nav-link" data-scroll-target="#sürümler-releases-ve-etiketler"><span class="header-section-number">12.3</span> Sürümler (releases) ve etiketler</a></li>
+  <li><a href="#lisans-eklemek" id="toc-lisans-eklemek" class="nav-link" data-scroll-target="#lisans-eklemek"><span class="header-section-number">12.4</span> Lisans eklemek</a></li>
+  <li><a href="#düzenli-depo-için-kontrol-listesi" id="toc-düzenli-depo-için-kontrol-listesi" class="nav-link" data-scroll-target="#düzenli-depo-için-kontrol-listesi"><span class="header-section-number">12.5</span> Düzenli depo için kontrol listesi</a></li>
+  </ul></li>
+  <li><a href="#sık-karşılaşılan-sorunlar-sss" id="toc-sık-karşılaşılan-sorunlar-sss" class="nav-link" data-scroll-target="#sık-karşılaşılan-sorunlar-sss"><span class="header-section-number">13</span> Sık karşılaşılan sorunlar (SSS)</a></li>
+  <li><a href="#faydalı-kaynaklar" id="toc-faydalı-kaynaklar" class="nav-link" data-scroll-target="#faydalı-kaynaklar">Faydalı kaynaklar</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Epidemiyologlar İçin GitHub Rehberi</h1>
+<p class="subtitle lead">Hesap açmaktan web sitesi yayınlamaya, sıfırdan uygulamalı kılavuz</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Yazar</div>
+    <div class="quarto-title-meta-contents">
+             <p>Hazırlayan: [Muammer BESLEN] </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Yayınlanma Tarihi</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">31 Mayıs 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="bu-rehber-kime-ve-neye-göre" class="level1 unnumbered">
+<h1 class="unnumbered">Bu rehber kime ve neye göre</h1>
+<p>Bu rehber, <strong>kod yazan ama GitHub kullanmamış</strong> sağlık ve epidemiyoloji araştırmacıları için yazıldı. Amaç GitHub’ı bir yazılımcı gibi değil, bir araştırmacı gibi kullanmanı sağlamak: analiz kodunu güvende tutmak, sürümlerini takip etmek, ekiple çalışmak ve sonuçları yayınlamak.</p>
+<p>Rehber boyunca her iş için <strong>iki yol</strong> göstereceğiz:</p>
+<ul>
+<li>🟢 <strong>Kolay yol</strong> — tarayıcı ve <strong>GitHub Desktop</strong> (kod yazmadan, tıklayarak)</li>
+<li>🔵 <strong>İleri yol</strong> — <strong>terminal / komut satırı</strong> (Git komutlarıyla)</li>
+</ul>
+<p>İkisini de bilmen gerekmez. Önce kolay yolla başla; terminale ihtiyaç duyduğunda ilgili bölüme dönersin.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">İpucu</span>Nasıl okumalı?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Soldaki içindekiler menüsünden istediğin konuya atlayabilirsin. İlk kez kullanıyorsan sırayla “Git ve GitHub nedir?” → “Hesap oluşturma” → “GitHub Desktop” bölümlerini takip et.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="git-ve-github-nedir" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Git ve GitHub nedir?</h1>
+<p>İkisi farklı şeylerdir ve bu ayrım kafa karışıklığının çoğunu çözer.</p>
+<ul>
+<li><strong>Git</strong>, bilgisayarındaki dosyaların değişikliklerini kaydeden bir <strong>sürüm kontrol sistemidir</strong>. “<code>analiz_son.R</code>”, “<code>analiz_son_v2.R</code>”, “<code>analiz_GERÇEKTEN_son.R</code>” dosyalarına son verir. Tek bir dosya tutarsın; Git onun tüm geçmişini hatırlar.</li>
+<li><strong>GitHub</strong>, Git ile takip edilen projelerin (depoların) saklandığı, paylaşıldığı ve birlikte çalışıldığı <strong>internet platformudur</strong>. Git’in bulutta yaşayan hali gibi düşün.</li>
+</ul>
+<p>Benzetme: <strong>Git</strong> Word’ün “değişiklikleri izle” özelliği, <strong>GitHub</strong> ise dosyanın herkesin görüp katkı verebildiği Google Drive’daki hali gibidir.</p>
+<section id="neden-epidemiyoloji-için-önemli" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="neden-epidemiyoloji-için-önemli"><span class="header-section-number">1.1</span> Neden epidemiyoloji için önemli?</h2>
+<ul>
+<li><strong>Yeniden üretilebilirlik (reproducibility):</strong> Bir analizin hangi kodla, hangi sürümde yapıldığı kayıt altındadır. Hakem “şu tabloyu nasıl ürettiniz?” dediğinde geçmişe dönebilirsin.</li>
+<li><strong>Yedek ve güvenlik:</strong> Bilgisayarın bozulsa bile kodun bulutta durur.</li>
+<li><strong>İş birliği:</strong> Aynı R/Python projesini birden fazla kişi, birbirinin üstüne yazmadan geliştirebilir.</li>
+<li><strong>Yayınlama:</strong> Quarto raporlarını, ders notlarını, paket dokümantasyonunu ücretsiz bir web sitesi olarak yayımlayabilirsin (bu rehberin kendisi de öyle yayımlanabilir).</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Uyarı</span>Hasta verisi uyarısı
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>GitHub’a <strong>kimliklendirilebilir hasta verisi, ham veri seti veya gizli bilgi yüklemeyin.</strong> GitHub kodu paylaşmak içindir, veriyi değil. Veriyi hariç tutmayı <a href="#gitignore-istenmeyen-dosyalari-haric-tutmak"><code>.gitignore</code></a> bölümünde anlatıyoruz. Halka açık (public) depolarda her şey herkese görünür.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="temel-sözlük" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Temel sözlük</h1>
+<p>Rehber boyunca geçecek terimler. Şimdilik göz gezdir, ileride dönersin.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Terim</th>
+<th>Türkçe karşılığı</th>
+<th>Ne demek</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Repository (repo)</strong></td>
+<td>Depo</td>
+<td>Bir projenin tüm dosyaları ve geçmişi</td>
+</tr>
+<tr class="even">
+<td><strong>Commit</strong></td>
+<td>İşleme / kayıt</td>
+<td>Değişikliklerin bir “fotoğrafı”; geçmişteki bir nokta</td>
+</tr>
+<tr class="odd">
+<td><strong>Clone</strong></td>
+<td>Klonlama</td>
+<td>Bir depoyu bilgisayarına indirmek</td>
+</tr>
+<tr class="even">
+<td><strong>Push</strong></td>
+<td>İtme</td>
+<td>Yereldeki değişiklikleri GitHub’a göndermek</td>
+</tr>
+<tr class="odd">
+<td><strong>Pull</strong></td>
+<td>Çekme</td>
+<td>GitHub’daki değişiklikleri bilgisayarına indirmek</td>
+</tr>
+<tr class="even">
+<td><strong>Branch</strong></td>
+<td>Dal</td>
+<td>Ana hattı bozmadan ayrı bir çalışma kolu</td>
+</tr>
+<tr class="odd">
+<td><strong>Merge</strong></td>
+<td>Birleştirme</td>
+<td>Bir dalı diğerine katmak</td>
+</tr>
+<tr class="even">
+<td><strong>Fork</strong></td>
+<td>Çatallama</td>
+<td>Başkasının deposunun kendi hesabına kopyası</td>
+</tr>
+<tr class="odd">
+<td><strong>Pull Request (PR)</strong></td>
+<td>Birleştirme isteği</td>
+<td>“Şu değişikliklerimi projene alır mısın?” teklifi</td>
+</tr>
+<tr class="even">
+<td><strong>Issue</strong></td>
+<td>Konu / sorun</td>
+<td>Hata bildirimi, öneri veya yapılacaklar notu</td>
+</tr>
+<tr class="odd">
+<td><strong>README</strong></td>
+<td>Beni oku</td>
+<td>Deponun ana tanıtım/kullanım sayfası</td>
+</tr>
+<tr class="even">
+<td><strong>Remote</strong></td>
+<td>Uzak depo</td>
+<td>GitHub’daki kopyanın adresi (genelde <code>origin</code>)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="hesap-oluşturma" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Hesap oluşturma</h1>
+<ol type="1">
+<li><a href="https://github.com" class="uri">https://github.com</a> adresine git, <strong>Sign up</strong>’a tıkla.</li>
+<li>Bir <strong>e-posta</strong>, <strong>parola</strong> ve <strong>kullanıcı adı</strong> belirle.
+<ul>
+<li>Kullanıcı adın profil adresin olur: <code>github.com/kullaniciadi</code>. Akademik kimliğinin parçası olacağı için sade ve kalıcı bir ad seç (örn. <code>aysenuryilmaz</code> gibi).</li>
+</ul></li>
+<li>E-postanı doğrula. Ücretsiz plan araştırma için fazlasıyla yeterlidir.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">İpucu</span>Akademik avantajlar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>GitHub Education / Student &amp; Teacher</strong> programlarıyla bazı ücretli özellikler akademisyenlere ücretsiz açılabilir. Kurumsal e-postanla başvurmayı dene.</li>
+<li>Profilini bir <strong>fotoğraf</strong>, <strong>kurum</strong> ve kısa <strong>biyografi</strong> ile doldur; yayınlarına atıf alırken bu profil görünürlüğünü artırır.</li>
+</ul>
+</div>
+</div>
+<p>İki adımlı doğrulamayı (2FA) açman önerilir; GitHub bunu zaten birçok hesap için zorunlu tutmaktadır.</p>
+<hr>
+</section>
+<section id="hangi-yöntemi-seçmeliyim" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Hangi yöntemi seçmeliyim?</h1>
+<div class="cell" data-eval="true" data-layout-align="default">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>flowchart TD</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    A["Ne yapacaksın?"] --&gt; B["Sadece dosya yükle/düzenle,&lt;br/&gt;hızlı bir şey"]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    A --&gt; C["Düzenli proje,&lt;br/&gt;bilgisayarda çalışacaksın"]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    A --&gt; D["Çok dosya, otomasyon,&lt;br/&gt;R/Python projesi"]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    B --&gt; B1["🟢 Tarayıcı&lt;br/&gt;(GitHub web arayüzü)"]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    C --&gt; C1["🟢 GitHub Desktop&lt;br/&gt;(önerilen başlangıç)"]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    D --&gt; D1["🔵 Terminal / Git komutları&lt;br/&gt;+ RStudio entegrasyonu"]</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A["Ne yapacaksın?"] --&gt; B["Sadece dosya yükle/düzenle,&lt;br/&gt;hızlı bir şey"]
+    A --&gt; C["Düzenli proje,&lt;br/&gt;bilgisayarda çalışacaksın"]
+    A --&gt; D["Çok dosya, otomasyon,&lt;br/&gt;R/Python projesi"]
+    B --&gt; B1["🟢 Tarayıcı&lt;br/&gt;(GitHub web arayüzü)"]
+    C --&gt; C1["🟢 GitHub Desktop&lt;br/&gt;(önerilen başlangıç)"]
+    D --&gt; D1["🔵 Terminal / Git komutları&lt;br/&gt;+ RStudio entegrasyonu"]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Özet öneri: <strong>Yeni başlıyorsan GitHub Desktop</strong>. R/Python ile yoğun çalışacaksan <strong>terminal</strong> (ya da RStudio’nun Git paneli) uzun vadede daha güçlüdür.</p>
+<hr>
+</section>
+<section id="en-kolay-yol-github-web-arayüzü" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> 🟢 En kolay yol: GitHub web arayüzü</h1>
+<p>Hiçbir program kurmadan, sadece tarayıcıyla yapılabilecek işler.</p>
+<section id="yeni-depo-repository-oluşturma" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="yeni-depo-repository-oluşturma"><span class="header-section-number">5.1</span> Yeni depo (repository) oluşturma</h2>
+<ol type="1">
+<li>Sağ üstteki <strong>+</strong> → <strong>New repository</strong>.</li>
+<li><strong>Repository name</strong>: proje adı (boşluk yerine tire kullan: <code>kizamik-analizi</code>).</li>
+<li><strong>Description</strong>: kısa açıklama (isteğe bağlı).</li>
+<li><strong>Public</strong> (herkese açık) ya da <strong>Private</strong> (sadece sen ve davet ettiklerin) seç.</li>
+<li><strong>Add a README file</strong> kutusunu işaretle — deponun ilk sayfası hazır gelir.</li>
+<li>İstersen bir <strong>.gitignore</strong> şablonu (örn. <em>R</em>) ve bir <strong>lisans</strong> seç.</li>
+<li><strong>Create repository</strong>.</li>
+</ol>
+</section>
+<section id="dosya-yükleme-sürükle-bırak" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="dosya-yükleme-sürükle-bırak"><span class="header-section-number">5.2</span> Dosya yükleme (sürükle-bırak)</h2>
+<p>Depo sayfasında <strong>Add file → Upload files</strong> de, dosyalarını pencereye sürükle, alttaki kutuya kısa bir açıklama yaz ve <strong>Commit changes</strong>’e bas. Bu kadar.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Not
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Web arayüzünden tek seferde <strong>çok büyük veya çok sayıda</strong> dosya yüklemek zordur. Düzenli çalışacaksan GitHub Desktop veya terminale geç.</p>
+</div>
+</div>
+</section>
+<section id="tarayıcıda-dosya-düzenleme" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="tarayıcıda-dosya-düzenleme"><span class="header-section-number">5.3</span> Tarayıcıda dosya düzenleme</h2>
+<p>Bir dosyaya tıkla → sağ üstteki <strong>kalem (✏️) simgesine</strong> bas → düzenle → <strong>Commit changes</strong>. Küçük düzeltmeler (bir yazım hatası, README’ye bir satır) için en hızlı yöntem budur.</p>
+<p>İpucu: Depo ana sayfasında klavyeden <strong><code>.</code></strong> (nokta) tuşuna basarsan, depo tarayıcı içinde tam bir <strong>VS Code</strong> düzenleyicisinde açılır (<code>github.dev</code>) — kurulum gerektirmez.</p>
+<hr>
+</section>
+</section>
+<section id="github-desktop-ile-çalışma" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> 🟢 GitHub Desktop ile çalışma</h1>
+<p>Yeni başlayanlar için en rahat yol. Komut yazmadan, butonlarla commit / push / pull yaparsın.</p>
+<section id="kurulum-ve-giriş" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="kurulum-ve-giriş"><span class="header-section-number">6.1</span> Kurulum ve giriş</h2>
+<ol type="1">
+<li><a href="https://desktop.github.com" class="uri">https://desktop.github.com</a> adresinden indir, kur.</li>
+<li>Aç → <strong>Sign in to GitHub.com</strong> → tarayıcıda hesabınla yetki ver. (Kimlik doğrulamayı program kendi halleder; parola/anahtar derdi yok.)</li>
+<li>Adını ve e-postanı sorarsa, GitHub hesabınla aynısını gir.</li>
+</ol>
+</section>
+<section id="temel-iş-akışı" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="temel-iş-akışı"><span class="header-section-number">6.2</span> Temel iş akışı</h2>
+<p><strong>a) Depoyu bilgisayarına alma (clone):</strong> <strong>File → Clone repository</strong> → listeden deponu seç → bilgisayarında bir klasör belirle → <strong>Clone</strong>.</p>
+<p><strong>b) Yeni depo oluşturma:</strong> <strong>File → New repository</strong> → ad, klasör, README seç → <strong>Create repository</strong> → sağdaki <strong>Publish repository</strong> ile GitHub’a yükle.</p>
+<p><strong>c) Değişiklik yapma ve kaydetme (commit):</strong> Dosyaları her zamanki programlarınla (RStudio, VS Code, Excel…) düzenle ve kaydet. GitHub Desktop’a dönünce <strong>Changes</strong> sekmesinde değişen dosyaları görürsün:</p>
+<ol type="1">
+<li>Kaydetmek istediklerinin yanındaki kutuları işaretle.</li>
+<li>Sol altta <strong>Summary</strong> kutusuna kısa bir başlık yaz (örn. “Yaş standardizasyonu eklendi”).</li>
+<li><strong>Commit to main</strong>’e bas.</li>
+</ol>
+<p><strong>d) GitHub’a gönderme (push):</strong> Üstteki <strong>Push origin</strong> düğmesine bas. Artık değişikliklerin bulutta.</p>
+<p><strong>e) Güncellemeleri alma (pull):</strong> Başka biri (veya başka bir bilgisayarın) değişiklik yaptıysa, çalışmaya başlamadan önce <strong>Fetch origin</strong> → <strong>Pull origin</strong> ile en güncel hali çek.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">İpucu</span>Altın kural
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Çalışmaya başlamadan <strong>pull</strong>, işin bitince <strong>commit + push</strong>. Bu sıra çakışmaların çoğunu önler.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="terminal-komut-satırı-ile-çalışma" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> 🔵 Terminal / komut satırı ile çalışma</h1>
+<p>Daha güçlü ve hızlı, ama biraz öğrenme gerektirir. R kullanıcıları çoğu işi <strong>RStudio’nun Git paneliyle</strong> de yapabilir (aynı komutların butonlu hali); yine de komutları bilmek işine yarar.</p>
+<section id="giti-kurma" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="giti-kurma"><span class="header-section-number">7.1</span> Git’i kurma</h2>
+<ul>
+<li><strong>Windows:</strong> <a href="https://git-scm.com" class="uri">https://git-scm.com</a> adresinden Git for Windows’u kur (kurulum sırasındaki varsayılanlar yeterli). Beraberinde <strong>Git Bash</strong> terminali gelir.</li>
+<li><strong>macOS:</strong> Terminale <code>git --version</code> yaz; kurulu değilse macOS kurmayı önerir. Alternatif: <code>brew install git</code>.</li>
+<li><strong>Linux:</strong> <code>sudo apt install git</code> (Debian/Ubuntu) ya da dağıtımının paket yöneticisi.</li>
+</ul>
+</section>
+<section id="ilk-kez-bir-defalık-ayar" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="ilk-kez-bir-defalık-ayar"><span class="header-section-number">7.2</span> İlk kez bir defalık ayar</h2>
+<p>Commit’lere adının yazılması için kimliğini tanıt:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Ayşe Yılmaz"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"ayse@ornek.edu.tr"</span></span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="kimlik-doğrulama-önemli" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="kimlik-doğrulama-önemli"><span class="header-section-number">7.3</span> Kimlik doğrulama (önemli!)</h2>
+<p>GitHub artık terminalden <strong>parola kabul etmiyor.</strong> İki yaygın yol var:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Yöntem 1: GitHub CLI (en kolay)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Yöntem 2: SSH anahtarı</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><a href="https://cli.github.com">GitHub CLI</a> aracını kur, sonra:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> auth login</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Sorulara tarayıcıdan yanıt ver; gerisini kendisi halleder. Sonraki tüm <code>push</code>/<code>pull</code> işlemleri sorunsuz çalışır.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Bir defa kur, bir daha uğraşma:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Anahtar üret (e-postanı yaz)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"ayse@ornek.edu.tr"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Enter'lara bas (varsayılan konum ve boş parola olur)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Açık anahtarı ekrana yazdır ve kopyala</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ~/.ssh/id_ed25519.pub</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Kopyaladığın metni GitHub’da <strong>Settings → SSH and GPG keys → New SSH key</strong> altına yapıştır. Artık depoları <code>git@github.com:...</code> (SSH) adresiyle klonlayabilirsin.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Not
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En kolayı: kimlik doğrulamayı dert etmek istemiyorsan <strong>GitHub Desktop</strong> veya <strong>GitHub CLI</strong> kullan; ikisi de bu işi senin yerine yapar.</p>
+</div>
+</div>
+</section>
+<section id="günlük-kullanılan-komutlar" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="günlük-kullanılan-komutlar"><span class="header-section-number">7.4</span> Günlük kullanılan komutlar</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bir depoyu indir (klonla)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/kullanici/proje.git</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Klasöre gir</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> proje</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Neyin değiştiğini gör</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Değişiklikleri hazırla (stage)</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add analiz.R            <span class="co"># tek dosya</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .                   <span class="co"># tüm değişiklikler</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Kaydet (commit) — mesaj yaz</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Yaş standardizasyonu eklendi"</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># GitHub'a gönder</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co"># GitHub'dan güncellemeleri al</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Geçmişi gör</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Tipik bir günün özeti:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull                       <span class="co"># güne güncel başla</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ... RStudio'da çalış, dosyaları kaydet ...</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Tabloları güncelledim"</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push                       <span class="co"># günü buluta yazarak bitir</span></span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="dallarla-branch-çalışmak" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="dallarla-branch-çalışmak"><span class="header-section-number">7.5</span> Dallarla (branch) çalışmak</h2>
+<p>Ana hattı (<code>main</code>) bozmadan deneme yapmak için:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch <span class="at">-c</span> yeni-analiz       <span class="co"># yeni dal aç ve geç</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ... çalış, commit'le ...</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main                 <span class="co"># ana dala dön</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge yeni-analiz           <span class="co"># denemeni ana dala kat</span></span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="sıfırdan-yeni-depo-yereldeki-klasörü-githuba-bağlama" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="sıfırdan-yeni-depo-yereldeki-klasörü-githuba-bağlama"><span class="header-section-number">7.6</span> Sıfırdan yeni depo (yereldeki klasörü GitHub’a bağlama)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> mevcut-projem</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"İlk commit"</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># GitHub'da boş bir depo açtıktan sonra adresini bağla:</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin git@github.com:kullanici/projem.git</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="gitignore-istenmeyen-dosyalari-haric-tutmak" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="gitignore-istenmeyen-dosyalari-haric-tutmak"><span class="header-section-number">7.7</span> <code>.gitignore</code>: istenmeyen dosyaları hariç tutmak</h2>
+<p>Bazı dosyalar <strong>asla</strong> GitHub’a gitmemeli: hasta verisi, devasa çıktı dosyaları, geçici dosyalar. Depo köküne <code>.gitignore</code> adlı bir dosya koy ve içine kalıpları yaz:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>.gitignore</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-filename=".gitignore"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Veri klasörünün tamamı (HASTA VERİSİ!)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">data/</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">*.csv</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">*.xlsx</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ex">*.dta</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="ex">*.sav</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># R/RStudio geçici dosyaları</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rhistory</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="ex">.RData</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user/</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Çıktılar</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="ex">*.html</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="ex">/_site/</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="ex">/docs/</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co"># İşletim sistemi çöpleri</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="ex">Thumbs.db</span></span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Uyarı
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>.gitignore</code>, dosyayı <strong>henüz hiç commit etmediysen</strong> çalışır. Bir veri dosyasını yanlışlıkla yükledikten sonra silmek yetmez — geçmişten temizlemek gerekir (<code>git rm --cached dosya</code> + commit, gerekirse geçmiş temizliği). Bu yüzden <code>.gitignore</code>’u <strong>en baştan</strong> ayarla.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="readme-sayfalarını-süslemek" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> README sayfalarını süslemek</h1>
+<p><code>README.md</code>, deponun vitrinidir; biri deponu açtığında ilk gördüğü şeydir. <strong>Markdown</strong> denen sade biçimlendirme diliyle yazılır (Quarto’da kullandığının aynısı).</p>
+<section id="markdownın-temelleri" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="markdownın-temelleri"><span class="header-section-number">8.1</span> Markdown’ın temelleri</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Büyük başlık (H1)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alt başlık (H2)</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Daha alt başlık (H3)</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>Normal metin. **Kalın**, *italik*, <span class="in">`kod parçası`</span>.</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Madde</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Madde</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Alt madde</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Numaralı</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Liste</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Alıntı kutusu</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Bağlantı metni</span><span class="co">](https://ornek.com)</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="al">![Görsel açıklaması](gorsel/sema.png)</span></span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="tablo" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="tablo"><span class="header-section-number">8.2</span> Tablo</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Değişken <span class="pp">|</span> Tip <span class="pp">|</span> Açıklama <span class="pp">|</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------|-----|----------|</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> yas      <span class="pp">|</span> sayısal <span class="pp">|</span> Yıl olarak yaş <span class="pp">|</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> cinsiyet <span class="pp">|</span> kategorik <span class="pp">|</span> K/E <span class="pp">|</span></span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="kod-blokları" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="kod-blokları"><span class="header-section-number">8.3</span> Kod blokları</h2>
+<p>Üç ters tırnak (<code>```</code>) arasına dil adıyla:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>veri <span class="sc">%&gt;%</span> <span class="fu">count</span>(cinsiyet)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="rozetler-badges-ile-süsleme" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="rozetler-badges-ile-süsleme"><span class="header-section-number">8.4</span> Rozetler (badges) ile süsleme</h2>
+<p>Rozetler README’ye renkli küçük etiketler ekler. <a href="https://shields.io" class="uri">https://shields.io</a> adresinden üretebilirsin. Örnekler:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Lisans](https://img.shields.io/badge/lisans-MIT-blue)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="al">![R](https://img.shields.io/badge/R-4.4-276DC3?logo=r)</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="al">![Durum](https://img.shields.io/badge/durum-aktif-success)</span></span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="içindekiler-emoji-ve-görseller" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="içindekiler-emoji-ve-görseller"><span class="header-section-number">8.5</span> İçindekiler, emoji ve görseller</h2>
+<ul>
+<li>Uzun README’lerde başlıklara bağlantı vererek elle bir <strong>içindekiler</strong> listesi yapabilirsin.</li>
+<li>Emoji’leri doğrudan yapıştırabilir ya da <code>:rocket:</code> 🚀, <code>:warning:</code> ⚠️ gibi kısa kodlarla yazabilirsin.</li>
+<li>Görselleri depo içinde bir <code>img/</code> klasörüne koyup <code>![](img/akis-semasi.png)</code> ile gömmek en sağlam yoldur.</li>
+</ul>
+</section>
+<section id="iyi-bir-araştırma-readmesinde-ne-olmalı" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="iyi-bir-araştırma-readmesinde-ne-olmalı"><span class="header-section-number">8.6</span> İyi bir araştırma README’sinde ne olmalı?</h2>
+<ol type="1">
+<li><strong>Projenin adı ve tek cümlelik amacı</strong></li>
+<li><strong>İçerik:</strong> hangi klasörde ne var (kısa bir dosya haritası)</li>
+<li><strong>Nasıl çalıştırılır:</strong> gereken paketler, çalıştırma sırası</li>
+<li><strong>Veri notu:</strong> verinin nereden geldiği / neden depoda olmadığı</li>
+<li><strong>Atıf:</strong> çalışmaya nasıl atıf verilmeli</li>
+<li><strong>Lisans ve iletişim</strong></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+İpucu
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Düzenlerken GitHub’daki dosya görünümünde <strong>Preview</strong> sekmesiyle nasıl göründüğünü canlı kontrol edebilirsin.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="issue-konu-açmak" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Issue (konu) açmak</h1>
+<p><strong>Issue</strong>, bir depo hakkında konuşma açtığın yerdir: hata bildirimi, soru, yapılacaklar listesi ya da öneri. Hem kendi projende hem başkasınınkinde kullanılır.</p>
+<section id="nasıl-açılır" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="nasıl-açılır"><span class="header-section-number">9.1</span> Nasıl açılır?</h2>
+<ol type="1">
+<li>Deponun üstündeki <strong>Issues</strong> sekmesine git → <strong>New issue</strong>.</li>
+<li>Kısa ama net bir <strong>başlık</strong> yaz (örn. “Yaş gruplaması 85+ için hatalı”).</li>
+<li>Açıklamaya şunları ekle:
+<ul>
+<li>Ne bekliyordun, ne oldu</li>
+<li>Nasıl tekrar üretilir (mümkünse küçük bir kod parçası)</li>
+<li>Sürüm bilgisi (R sürümü, paket sürümü)</li>
+</ul></li>
+<li><strong>Submit new issue</strong>.</li>
+</ol>
+</section>
+<section id="işini-kolaylaştıran-özellikler" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="işini-kolaylaştıran-özellikler"><span class="header-section-number">9.2</span> İşini kolaylaştıran özellikler</h2>
+<ul>
+<li><p><strong>Labels (etiketler):</strong> <code>hata</code>, <code>iyileştirme</code>, <code>soru</code> gibi renkli sınıflandırmalar.</p></li>
+<li><p><strong>Assignees:</strong> issue’yu birine ata.</p></li>
+<li><p><strong><span class="citation" data-cites="kullanıcı">@kullanıcı</span></strong> yazarak birine haber ver; <strong>#12</strong> yazarak başka bir issue’ya bağlan.</p></li>
+<li><p>Onay kutulu yapılacaklar listesi:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[x]</span> Veri temizliği</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Yaş standardizasyonu</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Tabloların kontrolü</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Bir commit mesajına <code>Fixes #14</code> yazarsan, o commit GitHub’a ulaştığında 14 numaralı issue <strong>otomatik kapanır</strong>.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Not
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Tek başına çalışsan bile issue’lar mükemmel bir <strong>yapılacaklar / fikir defteridir.</strong> Aklına geleni issue olarak açıp sonra kapatabilirsin.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="katkı-sağlamak-contribute" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Katkı sağlamak (contribute)</h1>
+<p>Başkasının projesini geliştirmenin standart yolu <strong>fork → değişiklik → pull request</strong> akışıdır. Çünkü genelde başkasının deposuna doğrudan yazma yetkin olmaz.</p>
+<section id="adım-adım-kolay-yol-tarayıcı-desktop" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="adım-adım-kolay-yol-tarayıcı-desktop"><span class="header-section-number">10.1</span> Adım adım (kolay yol — tarayıcı + Desktop)</h2>
+<ol type="1">
+<li><strong>Fork:</strong> Katkı vereceğin deponun sağ üstündeki <strong>Fork</strong> düğmesine bas. Artık o deponun kendi hesabında bir kopyası var.</li>
+<li><strong>Clone:</strong> Kendi kopyanı GitHub Desktop ile bilgisayarına al.</li>
+<li><strong>Branch:</strong> Değişiklik için yeni bir dal aç (örn. <code>tablo-duzeltme</code>).</li>
+<li><strong>Değişiklik + commit + push:</strong> Düzeltmeni yap, commit’le, kendi forkuna push’la.</li>
+<li><strong>Pull Request (PR):</strong> GitHub’da forkunun sayfasında çıkan <strong>Compare &amp; pull request</strong> düğmesine bas. Ne değiştirdiğini açıkla ve <strong>Create pull request</strong> de.</li>
+<li>Proje sahibi PR’ını inceler, yorum yapar, kabul ederse <strong>merge</strong> eder.</li>
+</ol>
+</section>
+<section id="aynı-işin-terminaldeki-hali" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="aynı-işin-terminaldeki-hali"><span class="header-section-number">10.2</span> Aynı işin terminaldeki hali</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Forkunu klonladıktan sonra</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch <span class="at">-c</span> tablo-duzeltme</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ... düzelt ...</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Tablo başlıkları düzeltildi"</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin tablo-duzeltme</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Ardından GitHub'daki bağlantıdan PR aç</span></span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">İpucu</span>Katkı görgü kuralları
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Önce projenin <code>CONTRIBUTING.md</code> dosyasına ve açık issue’lara bak.</li>
+<li>Büyük bir değişiklikten önce bir <strong>issue açıp niyetini</strong> belirt; emek harcamadan önce sahibinin onayını al.</li>
+<li>Bir PR’da <strong>tek bir konuya</strong> odaklan; incelemesi kolay olur.</li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="web-sitesi-yayınlamak-github-pages-quarto" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Web sitesi yayınlamak (GitHub Pages + Quarto)</h1>
+<p>GitHub, depolarını ücretsiz bir web sitesine çevirebilir: <strong>GitHub Pages</strong>. Quarto kullandığın için en pratik yolu Quarto üzerinden anlatıyoruz — <strong>bu rehber de tam olarak böyle yayımlanabilir.</strong></p>
+<section id="yol-a-quarto-ile-önerilen" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="yol-a-quarto-ile-önerilen"><span class="header-section-number">11.1</span> Yol A — Quarto ile (önerilen)</h2>
+<p>Quarto’nun yerleşik komutu çoğu işi otomatik yapar. <code>quarto publish gh-pages</code> komutu ilk çalıştırıldığında, yoksa hem yerelde hem uzakta bir <code>gh-pages</code> dalını otomatik oluşturur.</p>
+<p><strong>1) Çıktıları Git’in dışında tut.</strong> Quarto sitesi <code>_site/</code> (veya kitap için <code>_book/</code>) klasörüne render edilir; bunları depoya koymaya gerek yok. Depo köküne bir <code>.gitignore</code> ekle:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>.gitignore</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-filename=".gitignore"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/.quarto/</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/_site/</span></span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>2) Yayımla.</strong> Proje klasöründe, <code>gh-pages</code> dalında <strong>olmadığından</strong> emin olarak şu komutu çalıştır:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Bu konfigürasyon değişikliğinden sonra GitHub sitenin dağıtımını tetikler; ayrıca <code>main</code> dalına her commit ve push yaptığında siten güncellenir.</p>
+<p><strong>3) Sonuç.</strong> Proje siteleri (<code>https://kullanici.github.io/depo/</code>) için GitHub yeni dalı algılar ve Pages’i <code>gh-pages</code> dalından yayımlayacak şekilde kendisi yapılandırır; Settings : Pages altında elle bir ayar gerekmez.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Not</span>Kullanıcı/kurum sitesi farkı
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Kullanıcı ve kurum siteleri (<code>https://kullanici.github.io/</code> adresinde sunulanlar) GitHub tarafında farklı davranır: varsayılan yayın kaynakları <code>gh-pages</code> değil <code>main</code> dalıdır. Bu durumda ilk <code>quarto publish gh-pages</code> çalıştırmasından sonra <strong>Settings : Pages</strong> altında kaynak dalı elle <code>gh-pages</code> olarak değiştirmen gerekir; Quarto bu durumu algıladığında ilgili ayar sayfasına doğrudan bir bağlantı içeren bir uyarı yazdırır.</p>
+</div>
+</div>
+<section id="otomatik-yayın-github-actions-isteğe-bağlı" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="otomatik-yayın-github-actions-isteğe-bağlı"><span class="header-section-number">11.1.1</span> Otomatik yayın (GitHub Actions) — isteğe bağlı</h3>
+<p>Her seferinde komut çalıştırmak istemezsen, depoya bir GitHub Actions iş akışı ekleyip <strong>her push’ta sitenin otomatik yeniden derlenmesini</strong> sağlayabilirsin. Önce bir kez <code>quarto publish gh-pages</code> çalıştırıp dalı oluşturman, sonra <code>.github/workflows/publish.yml</code> eklemen önerilir. Ayrıntılar için Quarto belgeleri: <a href="https://quarto.org/docs/publishing/github-pages.html" class="uri">https://quarto.org/docs/publishing/github-pages.html</a>.</p>
+</section>
+</section>
+<section id="yol-b-quartosuz-düz-htmlmarkdown" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="yol-b-quartosuz-düz-htmlmarkdown"><span class="header-section-number">11.2</span> Yol B — Quarto’suz, düz HTML/Markdown</h2>
+<p>Elinde hazır bir <code>index.html</code> veya Markdown sayfaları varsa:</p>
+<ol type="1">
+<li>Depo → <strong>Settings → Pages</strong>.</li>
+<li><strong>Source</strong> olarak bir dal (örn. <code>main</code>) ve klasör seç: <code>/ (root)</code> ya da <code>/docs</code>.</li>
+<li>Kaydet. Birkaç dakika içinde <code>https://kullanici.github.io/depo/</code> adresinde yayında olur.</li>
+</ol>
+<p>Jekyll işlemesini istemiyorsan depo köküne boş bir <strong><code>.nojekyll</code></strong> dosyası ekle.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+İpucu
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Yayınlanan adresi her zaman <strong>Settings → Pages</strong> sayfasının en üstünde görebilirsin. İlk yayında birkaç dakika gecikme normaldir.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="repo-yönetimi" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Repo yönetimi</h1>
+<p>Deponu derli toplu ve güvenli tutmak için.</p>
+<section id="işbirlikçi-collaborator-ekleme" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="işbirlikçi-collaborator-ekleme"><span class="header-section-number">12.1</span> İşbirlikçi (collaborator) ekleme</h2>
+<p>Özel bir depoda başkalarının da yazabilmesi için: <strong>Settings → Collaborators → Add people</strong> → kullanıcı adıyla davet et. Açık (public) depoda herkes görebilir ama yazmak için yine davet/PR gerekir.</p>
+</section>
+<section id="dalları-koruma-branch-protection" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="dalları-koruma-branch-protection"><span class="header-section-number">12.2</span> Dalları koruma (branch protection)</h2>
+<p>Ekip büyüdükçe <code>main</code> dalını koruyabilirsin: <strong>Settings → Branches</strong> altında “doğrudan push’u engelle, değişiklikler PR ile gelsin ve onaylansın” gibi kurallar tanımlanır. Bu, ana analizin yanlışlıkla bozulmasını önler.</p>
+</section>
+<section id="sürümler-releases-ve-etiketler" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="sürümler-releases-ve-etiketler"><span class="header-section-number">12.3</span> Sürümler (releases) ve etiketler</h2>
+<p>Bir makaleyi gönderdiğinde veya analizi “dondurduğunda” o anı bir <strong>release</strong> olarak işaretle: depo sağ taraftaki <strong>Releases → Create a new release</strong> → bir etiket (örn. <code>v1.0</code>) ve not. Böylece “makalede kullanılan tam sürüm” her zaman bulunur.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">İpucu</span>Zenodo ile DOI
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>GitHub deposunu <strong>Zenodo</strong>’ya bağlayıp bir release yayımladığında, çalışmana <strong>atıf verilebilir bir DOI</strong> atanır. Bu, kodunu makalende kaynak gösterebilmen için çok kullanışlıdır.</p>
+</div>
+</div>
+</section>
+<section id="lisans-eklemek" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="lisans-eklemek"><span class="header-section-number">12.4</span> Lisans eklemek</h2>
+<p>Lisanssız kod, başkalarının yasal olarak kullanamayacağı koddur. <strong>Add file → Create new file → <code>LICENSE</code></strong> yazınca GitHub sana hazır şablonlar sunar. Yaygın seçenekler:</p>
+<ul>
+<li><strong>MIT</strong> — çok serbest, basit.</li>
+<li><strong>GPL-3.0</strong> — türev çalışmaların da açık kalmasını ister.</li>
+<li><strong>CC-BY-4.0</strong> — kod değil de veri/doküman için daha uygundur.</li>
+</ul>
+</section>
+<section id="düzenli-depo-için-kontrol-listesi" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="düzenli-depo-için-kontrol-listesi"><span class="header-section-number">12.5</span> Düzenli depo için kontrol listesi</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Açıklayıcı bir <strong>README.md</strong></label></li>
+<li><label><input type="checkbox">Hassas/büyük dosyaları dışlayan <strong>.gitignore</strong></label></li>
+<li><label><input type="checkbox">Bir <strong>LICENSE</strong></label></li>
+<li><label><input type="checkbox">Anlamlı klasör yapısı (<code>R/</code>, <code>data/</code> (boş ya da örnek), <code>output/</code>, <code>docs/</code>)</label></li>
+<li><label><input type="checkbox">Net commit mesajları</label></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="sık-karşılaşılan-sorunlar-sss" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Sık karşılaşılan sorunlar (SSS)</h1>
+<p><strong>“Push reddedildi / updates were rejected” hatası alıyorum.</strong> Muhtemelen GitHub’da senin bilgisayarında olmayan değişiklikler var. Önce <code>git pull</code> (veya Desktop’ta <strong>Pull origin</strong>), sonra tekrar push’la.</p>
+<p><strong>Merge conflict (birleştirme çakışması) çıktı.</strong> İki kişi aynı satırı değiştirdiğinde olur. Git, dosyaya <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> işaretleri koyar. İstediğin hali bırakıp bu işaretleri silersin, sonra commit’lersin. RStudio ve VS Code bunu görsel olarak kolaylaştırır.</p>
+<p><strong>Yanlışlıkla hasta verisi/büyük dosya yükledim.</strong> <code>.gitignore</code>’a ekleyip <code>git rm --cached dosya</code> ile takibi durdur, commit’le. Dosya <strong>geçmişte</strong> kaldıysa tamamen temizlemek için ek araçlar gerekir (<code>git filter-repo</code> gibi) — bu durumda yardım iste, çünkü geçmiş yeniden yazılır.</p>
+<p><strong>Son commit mesajımı yanlış yazdım.</strong> Henüz push’lamadıysan: <code>git commit --amend -m "Doğru mesaj"</code>.</p>
+<p><strong>Bir dosyayı son commit’teki haline geri almak istiyorum.</strong> <code>git restore dosya.R</code> (henüz commit edilmemiş değişiklikleri siler — dikkat).</p>
+<p><strong>Hesabımda iki bilgisayar var, hangisi güncel?</strong> Her zaman <strong>GitHub’daki kopya gerçeğin kaynağıdır.</strong> Çalışmaya başlamadan pull, bitince push alışkanlığı bu karışıklığı bitirir.</p>
+<hr>
+</section>
+<section id="faydalı-kaynaklar" class="level1 unnumbered">
+<h1 class="unnumbered">Faydalı kaynaklar</h1>
+<ul>
+<li>GitHub resmi dokümantasyon (Türkçe arayüz mevcut): <a href="https://docs.github.com" class="uri">https://docs.github.com</a></li>
+<li>GitHub Desktop: <a href="https://desktop.github.com" class="uri">https://desktop.github.com</a></li>
+<li>Git resmi sitesi: <a href="https://git-scm.com" class="uri">https://git-scm.com</a></li>
+<li>Quarto + GitHub Pages: <a href="https://quarto.org/docs/publishing/github-pages.html" class="uri">https://quarto.org/docs/publishing/github-pages.html</a></li>
+<li>Rozet üretici (shields.io): <a href="https://shields.io" class="uri">https://shields.io</a></li>
+<li>“Happy Git with R” (R kullanıcıları için Git rehberi): <a href="https://happygitwithr.com" class="uri">https://happygitwithr.com</a></li>
+</ul>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Bu rehber sürekli geliştirilebilir. Bir eksik veya hata görürsen — artık nasıl yapıldığını biliyorsun — bir <strong>issue</strong> aç ya da bir <strong>pull request</strong> gönder. 🎉</p>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopyalandı");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopyalandı");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/drmuammer\.github\.io\/githubRehber\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
