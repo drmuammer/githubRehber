@@ -1,0 +1,30 @@
+/* Epidemiyoloji GitHub Rehberi - sade özelleştirmeler */
+
+/* Okumayı kolaylaştıran genişlik ve satır aralığı */
+.quarto-title-block .quarto-title .title {
+  line-height: 1.15;
+}
+
+/* Tablolar biraz daha nefes alsın */
+table {
+  margin: 1rem 0;
+}
+table th {
+  background-color: rgba(127, 127, 127, 0.12);
+}
+
+/* Kod bloklarının köşeleri yuvarlak */
+div.sourceCode {
+  border-radius: 6px;
+}
+
+/* Callout başlıkları biraz daha belirgin */
+.callout {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* İçindekiler menüsü aktif başlığı vurgula */
+.sidebar nav[role="doc-toc"] ul > li > a.active {
+  font-weight: 600;
+}

@@ -1,0 +1,219 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "",
+    "text": "Bu rehber, kod yazan ama GitHub kullanmamış sağlık ve epidemiyoloji araştırmacıları için yazıldı. Amaç GitHub’ı bir yazılımcı gibi değil, bir araştırmacı gibi kullanmanı sağlamak: analiz kodunu güvende tutmak, sürümlerini takip etmek, ekiple çalışmak ve sonuçları yayınlamak.\nRehber boyunca her iş için iki yol göstereceğiz:\n\n🟢 Kolay yol — tarayıcı ve GitHub Desktop (kod yazmadan, tıklayarak)\n🔵 İleri yol — terminal / komut satırı (Git komutlarıyla)\n\nİkisini de bilmen gerekmez. Önce kolay yolla başla; terminale ihtiyaç duyduğunda ilgili bölüme dönersin.\n\n\n\n\n\n\nİpucuNasıl okumalı?\n\n\n\nSoldaki içindekiler menüsünden istediğin konuya atlayabilirsin. İlk kez kullanıyorsan sırayla “Git ve GitHub nedir?” → “Hesap oluşturma” → “GitHub Desktop” bölümlerini takip et."
+  },
+  {
+    "objectID": "index.html#neden-epidemiyoloji-için-önemli",
+    "href": "index.html#neden-epidemiyoloji-için-önemli",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "1.1 Neden epidemiyoloji için önemli?",
+    "text": "1.1 Neden epidemiyoloji için önemli?\n\nYeniden üretilebilirlik (reproducibility): Bir analizin hangi kodla, hangi sürümde yapıldığı kayıt altındadır. Hakem “şu tabloyu nasıl ürettiniz?” dediğinde geçmişe dönebilirsin.\nYedek ve güvenlik: Bilgisayarın bozulsa bile kodun bulutta durur.\nİş birliği: Aynı R/Python projesini birden fazla kişi, birbirinin üstüne yazmadan geliştirebilir.\nYayınlama: Quarto raporlarını, ders notlarını, paket dokümantasyonunu ücretsiz bir web sitesi olarak yayımlayabilirsin (bu rehberin kendisi de öyle yayımlanabilir).\n\n\n\n\n\n\n\nUyarıHasta verisi uyarısı\n\n\n\nGitHub’a kimliklendirilebilir hasta verisi, ham veri seti veya gizli bilgi yüklemeyin. GitHub kodu paylaşmak içindir, veriyi değil. Veriyi hariç tutmayı .gitignore bölümünde anlatıyoruz. Halka açık (public) depolarda her şey herkese görünür."
+  },
+  {
+    "objectID": "index.html#yeni-depo-repository-oluşturma",
+    "href": "index.html#yeni-depo-repository-oluşturma",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "5.1 Yeni depo (repository) oluşturma",
+    "text": "5.1 Yeni depo (repository) oluşturma\n\nSağ üstteki + → New repository.\nRepository name: proje adı (boşluk yerine tire kullan: kizamik-analizi).\nDescription: kısa açıklama (isteğe bağlı).\nPublic (herkese açık) ya da Private (sadece sen ve davet ettiklerin) seç.\nAdd a README file kutusunu işaretle — deponun ilk sayfası hazır gelir.\nİstersen bir .gitignore şablonu (örn. R) ve bir lisans seç.\nCreate repository."
+  },
+  {
+    "objectID": "index.html#dosya-yükleme-sürükle-bırak",
+    "href": "index.html#dosya-yükleme-sürükle-bırak",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "5.2 Dosya yükleme (sürükle-bırak)",
+    "text": "5.2 Dosya yükleme (sürükle-bırak)\nDepo sayfasında Add file → Upload files de, dosyalarını pencereye sürükle, alttaki kutuya kısa bir açıklama yaz ve Commit changes’e bas. Bu kadar.\n\n\n\n\n\n\nNot\n\n\n\nWeb arayüzünden tek seferde çok büyük veya çok sayıda dosya yüklemek zordur. Düzenli çalışacaksan GitHub Desktop veya terminale geç."
+  },
+  {
+    "objectID": "index.html#tarayıcıda-dosya-düzenleme",
+    "href": "index.html#tarayıcıda-dosya-düzenleme",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "5.3 Tarayıcıda dosya düzenleme",
+    "text": "5.3 Tarayıcıda dosya düzenleme\nBir dosyaya tıkla → sağ üstteki kalem (✏️) simgesine bas → düzenle → Commit changes. Küçük düzeltmeler (bir yazım hatası, README’ye bir satır) için en hızlı yöntem budur.\nİpucu: Depo ana sayfasında klavyeden . (nokta) tuşuna basarsan, depo tarayıcı içinde tam bir VS Code düzenleyicisinde açılır (github.dev) — kurulum gerektirmez."
+  },
+  {
+    "objectID": "index.html#kurulum-ve-giriş",
+    "href": "index.html#kurulum-ve-giriş",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "6.1 Kurulum ve giriş",
+    "text": "6.1 Kurulum ve giriş\n\nhttps://desktop.github.com adresinden indir, kur.\nAç → Sign in to GitHub.com → tarayıcıda hesabınla yetki ver. (Kimlik doğrulamayı program kendi halleder; parola/anahtar derdi yok.)\nAdını ve e-postanı sorarsa, GitHub hesabınla aynısını gir."
+  },
+  {
+    "objectID": "index.html#temel-iş-akışı",
+    "href": "index.html#temel-iş-akışı",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "6.2 Temel iş akışı",
+    "text": "6.2 Temel iş akışı\na) Depoyu bilgisayarına alma (clone): File → Clone repository → listeden deponu seç → bilgisayarında bir klasör belirle → Clone.\nb) Yeni depo oluşturma: File → New repository → ad, klasör, README seç → Create repository → sağdaki Publish repository ile GitHub’a yükle.\nc) Değişiklik yapma ve kaydetme (commit): Dosyaları her zamanki programlarınla (RStudio, VS Code, Excel…) düzenle ve kaydet. GitHub Desktop’a dönünce Changes sekmesinde değişen dosyaları görürsün:\n\nKaydetmek istediklerinin yanındaki kutuları işaretle.\nSol altta Summary kutusuna kısa bir başlık yaz (örn. “Yaş standardizasyonu eklendi”).\nCommit to main’e bas.\n\nd) GitHub’a gönderme (push): Üstteki Push origin düğmesine bas. Artık değişikliklerin bulutta.\ne) Güncellemeleri alma (pull): Başka biri (veya başka bir bilgisayarın) değişiklik yaptıysa, çalışmaya başlamadan önce Fetch origin → Pull origin ile en güncel hali çek.\n\n\n\n\n\n\nİpucuAltın kural\n\n\n\nÇalışmaya başlamadan pull, işin bitince commit + push. Bu sıra çakışmaların çoğunu önler."
+  },
+  {
+    "objectID": "index.html#giti-kurma",
+    "href": "index.html#giti-kurma",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "7.1 Git’i kurma",
+    "text": "7.1 Git’i kurma\n\nWindows: https://git-scm.com adresinden Git for Windows’u kur (kurulum sırasındaki varsayılanlar yeterli). Beraberinde Git Bash terminali gelir.\nmacOS: Terminale git --version yaz; kurulu değilse macOS kurmayı önerir. Alternatif: brew install git.\nLinux: sudo apt install git (Debian/Ubuntu) ya da dağıtımının paket yöneticisi."
+  },
+  {
+    "objectID": "index.html#ilk-kez-bir-defalık-ayar",
+    "href": "index.html#ilk-kez-bir-defalık-ayar",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "7.2 İlk kez bir defalık ayar",
+    "text": "7.2 İlk kez bir defalık ayar\nCommit’lere adının yazılması için kimliğini tanıt:\ngit config --global user.name \"Ayşe Yılmaz\"\ngit config --global user.email \"ayse@ornek.edu.tr\""
+  },
+  {
+    "objectID": "index.html#kimlik-doğrulama-önemli",
+    "href": "index.html#kimlik-doğrulama-önemli",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "7.3 Kimlik doğrulama (önemli!)",
+    "text": "7.3 Kimlik doğrulama (önemli!)\nGitHub artık terminalden parola kabul etmiyor. İki yaygın yol var:\n\nYöntem 1: GitHub CLI (en kolay)Yöntem 2: SSH anahtarı\n\n\nGitHub CLI aracını kur, sonra:\ngh auth login\nSorulara tarayıcıdan yanıt ver; gerisini kendisi halleder. Sonraki tüm push/pull işlemleri sorunsuz çalışır.\n\n\nBir defa kur, bir daha uğraşma:\n# 1) Anahtar üret (e-postanı yaz)\nssh-keygen -t ed25519 -C \"ayse@ornek.edu.tr\"\n# Enter'lara bas (varsayılan konum ve boş parola olur)\n\n# 2) Açık anahtarı ekrana yazdır ve kopyala\ncat ~/.ssh/id_ed25519.pub\nKopyaladığın metni GitHub’da Settings → SSH and GPG keys → New SSH key altına yapıştır. Artık depoları git@github.com:... (SSH) adresiyle klonlayabilirsin.\n\n\n\n\n\n\n\n\n\nNot\n\n\n\nEn kolayı: kimlik doğrulamayı dert etmek istemiyorsan GitHub Desktop veya GitHub CLI kullan; ikisi de bu işi senin yerine yapar."
+  },
+  {
+    "objectID": "index.html#günlük-kullanılan-komutlar",
+    "href": "index.html#günlük-kullanılan-komutlar",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "7.4 Günlük kullanılan komutlar",
+    "text": "7.4 Günlük kullanılan komutlar\n# Bir depoyu indir (klonla)\ngit clone https://github.com/kullanici/proje.git\n\n# Klasöre gir\ncd proje\n\n# Neyin değiştiğini gör\ngit status\n\n# Değişiklikleri hazırla (stage)\ngit add analiz.R            # tek dosya\ngit add .                   # tüm değişiklikler\n\n# Kaydet (commit) — mesaj yaz\ngit commit -m \"Yaş standardizasyonu eklendi\"\n\n# GitHub'a gönder\ngit push\n\n# GitHub'dan güncellemeleri al\ngit pull\n\n# Geçmişi gör\ngit log --oneline\nTipik bir günün özeti:\ngit pull                       # güne güncel başla\n# ... RStudio'da çalış, dosyaları kaydet ...\ngit add .\ngit commit -m \"Tabloları güncelledim\"\ngit push                       # günü buluta yazarak bitir"
+  },
+  {
+    "objectID": "index.html#dallarla-branch-çalışmak",
+    "href": "index.html#dallarla-branch-çalışmak",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "7.5 Dallarla (branch) çalışmak",
+    "text": "7.5 Dallarla (branch) çalışmak\nAna hattı (main) bozmadan deneme yapmak için:\ngit switch -c yeni-analiz       # yeni dal aç ve geç\n# ... çalış, commit'le ...\ngit switch main                 # ana dala dön\ngit merge yeni-analiz           # denemeni ana dala kat"
+  },
+  {
+    "objectID": "index.html#sıfırdan-yeni-depo-yereldeki-klasörü-githuba-bağlama",
+    "href": "index.html#sıfırdan-yeni-depo-yereldeki-klasörü-githuba-bağlama",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "7.6 Sıfırdan yeni depo (yereldeki klasörü GitHub’a bağlama)",
+    "text": "7.6 Sıfırdan yeni depo (yereldeki klasörü GitHub’a bağlama)\ncd mevcut-projem\ngit init\ngit add .\ngit commit -m \"İlk commit\"\n# GitHub'da boş bir depo açtıktan sonra adresini bağla:\ngit remote add origin git@github.com:kullanici/projem.git\ngit push -u origin main"
+  },
+  {
+    "objectID": "index.html#gitignore-istenmeyen-dosyalari-haric-tutmak",
+    "href": "index.html#gitignore-istenmeyen-dosyalari-haric-tutmak",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "7.7 .gitignore: istenmeyen dosyaları hariç tutmak",
+    "text": "7.7 .gitignore: istenmeyen dosyaları hariç tutmak\nBazı dosyalar asla GitHub’a gitmemeli: hasta verisi, devasa çıktı dosyaları, geçici dosyalar. Depo köküne .gitignore adlı bir dosya koy ve içine kalıpları yaz:\n\n\n.gitignore\n\n# Veri klasörünün tamamı (HASTA VERİSİ!)\ndata/\n*.csv\n*.xlsx\n*.dta\n*.sav\n\n# R/RStudio geçici dosyaları\n.Rhistory\n.RData\n.Rproj.user/\n\n# Çıktılar\n*.html\n/_site/\n/docs/\n\n# İşletim sistemi çöpleri\n.DS_Store\nThumbs.db\n\n\n\n\n\n\n\nUyarı\n\n\n\n.gitignore, dosyayı henüz hiç commit etmediysen çalışır. Bir veri dosyasını yanlışlıkla yükledikten sonra silmek yetmez — geçmişten temizlemek gerekir (git rm --cached dosya + commit, gerekirse geçmiş temizliği). Bu yüzden .gitignore’u en baştan ayarla."
+  },
+  {
+    "objectID": "index.html#markdownın-temelleri",
+    "href": "index.html#markdownın-temelleri",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "8.1 Markdown’ın temelleri",
+    "text": "8.1 Markdown’ın temelleri\n# Büyük başlık (H1)\n## Alt başlık (H2)\n### Daha alt başlık (H3)\n\nNormal metin. **Kalın**, *italik*, `kod parçası`.\n\n- Madde\n- Madde\n  - Alt madde\n\n1. Numaralı\n2. Liste\n\n&gt; Alıntı kutusu\n\n[Bağlantı metni](https://ornek.com)\n\n![Görsel açıklaması](gorsel/sema.png)"
+  },
+  {
+    "objectID": "index.html#tablo",
+    "href": "index.html#tablo",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "8.2 Tablo",
+    "text": "8.2 Tablo\n| Değişken | Tip | Açıklama |\n|----------|-----|----------|\n| yas      | sayısal | Yıl olarak yaş |\n| cinsiyet | kategorik | K/E |"
+  },
+  {
+    "objectID": "index.html#kod-blokları",
+    "href": "index.html#kod-blokları",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "8.3 Kod blokları",
+    "text": "8.3 Kod blokları\nÜç ters tırnak (```) arasına dil adıyla:\n```r\nlibrary(tidyverse)\nveri %&gt;% count(cinsiyet)\n```"
+  },
+  {
+    "objectID": "index.html#rozetler-badges-ile-süsleme",
+    "href": "index.html#rozetler-badges-ile-süsleme",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "8.4 Rozetler (badges) ile süsleme",
+    "text": "8.4 Rozetler (badges) ile süsleme\nRozetler README’ye renkli küçük etiketler ekler. https://shields.io adresinden üretebilirsin. Örnekler:\n![Lisans](https://img.shields.io/badge/lisans-MIT-blue)\n![R](https://img.shields.io/badge/R-4.4-276DC3?logo=r)\n![Durum](https://img.shields.io/badge/durum-aktif-success)"
+  },
+  {
+    "objectID": "index.html#içindekiler-emoji-ve-görseller",
+    "href": "index.html#içindekiler-emoji-ve-görseller",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "8.5 İçindekiler, emoji ve görseller",
+    "text": "8.5 İçindekiler, emoji ve görseller\n\nUzun README’lerde başlıklara bağlantı vererek elle bir içindekiler listesi yapabilirsin.\nEmoji’leri doğrudan yapıştırabilir ya da :rocket: 🚀, :warning: ⚠️ gibi kısa kodlarla yazabilirsin.\nGörselleri depo içinde bir img/ klasörüne koyup ![](img/akis-semasi.png) ile gömmek en sağlam yoldur."
+  },
+  {
+    "objectID": "index.html#iyi-bir-araştırma-readmesinde-ne-olmalı",
+    "href": "index.html#iyi-bir-araştırma-readmesinde-ne-olmalı",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "8.6 İyi bir araştırma README’sinde ne olmalı?",
+    "text": "8.6 İyi bir araştırma README’sinde ne olmalı?\n\nProjenin adı ve tek cümlelik amacı\nİçerik: hangi klasörde ne var (kısa bir dosya haritası)\nNasıl çalıştırılır: gereken paketler, çalıştırma sırası\nVeri notu: verinin nereden geldiği / neden depoda olmadığı\nAtıf: çalışmaya nasıl atıf verilmeli\nLisans ve iletişim\n\n\n\n\n\n\n\nİpucu\n\n\n\nDüzenlerken GitHub’daki dosya görünümünde Preview sekmesiyle nasıl göründüğünü canlı kontrol edebilirsin."
+  },
+  {
+    "objectID": "index.html#nasıl-açılır",
+    "href": "index.html#nasıl-açılır",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "9.1 Nasıl açılır?",
+    "text": "9.1 Nasıl açılır?\n\nDeponun üstündeki Issues sekmesine git → New issue.\nKısa ama net bir başlık yaz (örn. “Yaş gruplaması 85+ için hatalı”).\nAçıklamaya şunları ekle:\n\nNe bekliyordun, ne oldu\nNasıl tekrar üretilir (mümkünse küçük bir kod parçası)\nSürüm bilgisi (R sürümü, paket sürümü)\n\nSubmit new issue."
+  },
+  {
+    "objectID": "index.html#işini-kolaylaştıran-özellikler",
+    "href": "index.html#işini-kolaylaştıran-özellikler",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "9.2 İşini kolaylaştıran özellikler",
+    "text": "9.2 İşini kolaylaştıran özellikler\n\nLabels (etiketler): hata, iyileştirme, soru gibi renkli sınıflandırmalar.\nAssignees: issue’yu birine ata.\n@kullanıcı yazarak birine haber ver; #12 yazarak başka bir issue’ya bağlan.\nOnay kutulu yapılacaklar listesi:\n- [x] Veri temizliği\n- [ ] Yaş standardizasyonu\n- [ ] Tabloların kontrolü\nBir commit mesajına Fixes #14 yazarsan, o commit GitHub’a ulaştığında 14 numaralı issue otomatik kapanır.\n\n\n\n\n\n\n\nNot\n\n\n\nTek başına çalışsan bile issue’lar mükemmel bir yapılacaklar / fikir defteridir. Aklına geleni issue olarak açıp sonra kapatabilirsin."
+  },
+  {
+    "objectID": "index.html#adım-adım-kolay-yol-tarayıcı-desktop",
+    "href": "index.html#adım-adım-kolay-yol-tarayıcı-desktop",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "10.1 Adım adım (kolay yol — tarayıcı + Desktop)",
+    "text": "10.1 Adım adım (kolay yol — tarayıcı + Desktop)\n\nFork: Katkı vereceğin deponun sağ üstündeki Fork düğmesine bas. Artık o deponun kendi hesabında bir kopyası var.\nClone: Kendi kopyanı GitHub Desktop ile bilgisayarına al.\nBranch: Değişiklik için yeni bir dal aç (örn. tablo-duzeltme).\nDeğişiklik + commit + push: Düzeltmeni yap, commit’le, kendi forkuna push’la.\nPull Request (PR): GitHub’da forkunun sayfasında çıkan Compare & pull request düğmesine bas. Ne değiştirdiğini açıkla ve Create pull request de.\nProje sahibi PR’ını inceler, yorum yapar, kabul ederse merge eder."
+  },
+  {
+    "objectID": "index.html#aynı-işin-terminaldeki-hali",
+    "href": "index.html#aynı-işin-terminaldeki-hali",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "10.2 Aynı işin terminaldeki hali",
+    "text": "10.2 Aynı işin terminaldeki hali\n# Forkunu klonladıktan sonra\ngit switch -c tablo-duzeltme\n# ... düzelt ...\ngit add .\ngit commit -m \"Tablo başlıkları düzeltildi\"\ngit push -u origin tablo-duzeltme\n# Ardından GitHub'daki bağlantıdan PR aç\n\n\n\n\n\n\nİpucuKatkı görgü kuralları\n\n\n\n\nÖnce projenin CONTRIBUTING.md dosyasına ve açık issue’lara bak.\nBüyük bir değişiklikten önce bir issue açıp niyetini belirt; emek harcamadan önce sahibinin onayını al.\nBir PR’da tek bir konuya odaklan; incelemesi kolay olur."
+  },
+  {
+    "objectID": "index.html#yol-a-quarto-ile-önerilen",
+    "href": "index.html#yol-a-quarto-ile-önerilen",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "11.1 Yol A — Quarto ile (önerilen)",
+    "text": "11.1 Yol A — Quarto ile (önerilen)\nQuarto’nun yerleşik komutu çoğu işi otomatik yapar. quarto publish gh-pages komutu ilk çalıştırıldığında, yoksa hem yerelde hem uzakta bir gh-pages dalını otomatik oluşturur.\n1) Çıktıları Git’in dışında tut. Quarto sitesi _site/ (veya kitap için _book/) klasörüne render edilir; bunları depoya koymaya gerek yok. Depo köküne bir .gitignore ekle:\n\n\n.gitignore\n\n/.quarto/\n/_site/\n\n2) Yayımla. Proje klasöründe, gh-pages dalında olmadığından emin olarak şu komutu çalıştır:\nquarto publish gh-pages\nBu konfigürasyon değişikliğinden sonra GitHub sitenin dağıtımını tetikler; ayrıca main dalına her commit ve push yaptığında siten güncellenir.\n3) Sonuç. Proje siteleri (https://kullanici.github.io/depo/) için GitHub yeni dalı algılar ve Pages’i gh-pages dalından yayımlayacak şekilde kendisi yapılandırır; Settings : Pages altında elle bir ayar gerekmez.\n\n\n\n\n\n\nNotKullanıcı/kurum sitesi farkı\n\n\n\nKullanıcı ve kurum siteleri (https://kullanici.github.io/ adresinde sunulanlar) GitHub tarafında farklı davranır: varsayılan yayın kaynakları gh-pages değil main dalıdır. Bu durumda ilk quarto publish gh-pages çalıştırmasından sonra Settings : Pages altında kaynak dalı elle gh-pages olarak değiştirmen gerekir; Quarto bu durumu algıladığında ilgili ayar sayfasına doğrudan bir bağlantı içeren bir uyarı yazdırır.\n\n\n\n11.1.1 Otomatik yayın (GitHub Actions) — isteğe bağlı\nHer seferinde komut çalıştırmak istemezsen, depoya bir GitHub Actions iş akışı ekleyip her push’ta sitenin otomatik yeniden derlenmesini sağlayabilirsin. Önce bir kez quarto publish gh-pages çalıştırıp dalı oluşturman, sonra .github/workflows/publish.yml eklemen önerilir. Ayrıntılar için Quarto belgeleri: https://quarto.org/docs/publishing/github-pages.html."
+  },
+  {
+    "objectID": "index.html#yol-b-quartosuz-düz-htmlmarkdown",
+    "href": "index.html#yol-b-quartosuz-düz-htmlmarkdown",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "11.2 Yol B — Quarto’suz, düz HTML/Markdown",
+    "text": "11.2 Yol B — Quarto’suz, düz HTML/Markdown\nElinde hazır bir index.html veya Markdown sayfaları varsa:\n\nDepo → Settings → Pages.\nSource olarak bir dal (örn. main) ve klasör seç: / (root) ya da /docs.\nKaydet. Birkaç dakika içinde https://kullanici.github.io/depo/ adresinde yayında olur.\n\nJekyll işlemesini istemiyorsan depo köküne boş bir .nojekyll dosyası ekle.\n\n\n\n\n\n\nİpucu\n\n\n\nYayınlanan adresi her zaman Settings → Pages sayfasının en üstünde görebilirsin. İlk yayında birkaç dakika gecikme normaldir."
+  },
+  {
+    "objectID": "index.html#işbirlikçi-collaborator-ekleme",
+    "href": "index.html#işbirlikçi-collaborator-ekleme",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "12.1 İşbirlikçi (collaborator) ekleme",
+    "text": "12.1 İşbirlikçi (collaborator) ekleme\nÖzel bir depoda başkalarının da yazabilmesi için: Settings → Collaborators → Add people → kullanıcı adıyla davet et. Açık (public) depoda herkes görebilir ama yazmak için yine davet/PR gerekir."
+  },
+  {
+    "objectID": "index.html#dalları-koruma-branch-protection",
+    "href": "index.html#dalları-koruma-branch-protection",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "12.2 Dalları koruma (branch protection)",
+    "text": "12.2 Dalları koruma (branch protection)\nEkip büyüdükçe main dalını koruyabilirsin: Settings → Branches altında “doğrudan push’u engelle, değişiklikler PR ile gelsin ve onaylansın” gibi kurallar tanımlanır. Bu, ana analizin yanlışlıkla bozulmasını önler."
+  },
+  {
+    "objectID": "index.html#sürümler-releases-ve-etiketler",
+    "href": "index.html#sürümler-releases-ve-etiketler",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "12.3 Sürümler (releases) ve etiketler",
+    "text": "12.3 Sürümler (releases) ve etiketler\nBir makaleyi gönderdiğinde veya analizi “dondurduğunda” o anı bir release olarak işaretle: depo sağ taraftaki Releases → Create a new release → bir etiket (örn. v1.0) ve not. Böylece “makalede kullanılan tam sürüm” her zaman bulunur.\n\n\n\n\n\n\nİpucuZenodo ile DOI\n\n\n\nGitHub deposunu Zenodo’ya bağlayıp bir release yayımladığında, çalışmana atıf verilebilir bir DOI atanır. Bu, kodunu makalende kaynak gösterebilmen için çok kullanışlıdır."
+  },
+  {
+    "objectID": "index.html#lisans-eklemek",
+    "href": "index.html#lisans-eklemek",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "12.4 Lisans eklemek",
+    "text": "12.4 Lisans eklemek\nLisanssız kod, başkalarının yasal olarak kullanamayacağı koddur. Add file → Create new file → LICENSE yazınca GitHub sana hazır şablonlar sunar. Yaygın seçenekler:\n\nMIT — çok serbest, basit.\nGPL-3.0 — türev çalışmaların da açık kalmasını ister.\nCC-BY-4.0 — kod değil de veri/doküman için daha uygundur."
+  },
+  {
+    "objectID": "index.html#düzenli-depo-için-kontrol-listesi",
+    "href": "index.html#düzenli-depo-için-kontrol-listesi",
+    "title": "Epidemiyologlar İçin GitHub Rehberi",
+    "section": "12.5 Düzenli depo için kontrol listesi",
+    "text": "12.5 Düzenli depo için kontrol listesi\n\nAçıklayıcı bir README.md\nHassas/büyük dosyaları dışlayan .gitignore\nBir LICENSE\nAnlamlı klasör yapısı (R/, data/ (boş ya da örnek), output/, docs/)\nNet commit mesajları"
+  }
+]
